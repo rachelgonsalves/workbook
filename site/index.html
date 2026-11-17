@@ -1,0 +1,13 @@
+{% extends "site/_base.html" %}
+{# Placeholder page. Phase 2 replaces it with the real landing page and form. #}
+{% block content %}
+  <h1>{{ c.workbook.title }}</h1>
+  <p>{{ c.workbook.subtitle }}.</p>
+  <div class="callout">
+    <p><strong>Coming soon.</strong> A free, ADHD-friendly workbook to help your family get clear on money,
+    one 5-minute step at a time.</p>
+  </div>
+  <p style="margin-top:32px">
+    <a class="btn" href="{{ c.links.booking_url }}">Book a free, no-obligation financial analysis</a>
+  </p>
+{% endblock %}

@@ -1,0 +1,57 @@
+/* brand.css: shared styles for the website (and later the workbook PDF).
+   Colours come from styles/tokens.css, which build.py generates from config.yaml.
+   Phase 1A adds the workbook pieces (progress bar, micro-steps, fill-in boxes). */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--white);
+  color: var(--ink);
+  font-family: "Atkinson Hyperlegible", "Nunito Sans", "Segoe UI", Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.wrap { max-width: 720px; margin: 0 auto; padding: 48px 16px; }
+
+h1, h2, h3 { color: var(--mauve-dark); line-height: 1.2; }
+h1 { font-size: 2.2rem; margin: 0 0 0.5em; }
+
+a { color: var(--mauve-dark); }
+
+.btn {
+  display: inline-block;
+  min-height: 48px;
+  padding: 12px 28px;
+  border-radius: 999px;
+  background: var(--mauve-dark);
+  color: var(--white);
+  font-weight: 700;
+  text-decoration: none;
+}
+.btn:hover { background: var(--mauve); }
+
+.callout {
+  background: var(--mauve-tint);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 20px 24px;
+}
+
+.draft-banner {
+  background: var(--mauve-tint);
+  border-bottom: 1px solid var(--line);
+  color: var(--mauve-dark);
+  font-size: 14px;
+  text-align: center;
+  padding: 6px 16px;
+}
+
+.site-footer {
+  border-top: 1px solid var(--line);
+  color: #6B6470;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.site-footer p { margin: 0 0 0.75em; }

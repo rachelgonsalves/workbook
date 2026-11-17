@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}{{ c.workbook.title }} | {{ c.advisor.name }}{% endblock %}</title>
+  <meta name="description" content="{{ c.workbook.subtitle }}">
+  {% if not c.launched %}<meta name="robots" content="noindex, nofollow">{% endif %}
+  <link rel="stylesheet" href="styles/tokens.css">
+  <link rel="stylesheet" href="styles/brand.css">
+</head>
+<body>
+  {% if not c.launched %}<div class="draft-banner">Draft: not yet published</div>{% endif %}
+
+  <main class="wrap">
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="wrap site-footer">
+    <p>{{ c.disclosure.licence_line }}</p>
+    <p>{{ c.disclosure.short }}</p>
+    <p>{{ c.advisor.phone }} · <a href="mailto:{{ c.advisor.email }}">{{ c.advisor.email }}</a></p>
+  </footer>
+</body>
+</html>

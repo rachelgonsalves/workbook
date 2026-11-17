@@ -1,0 +1,66 @@
+# ─────────────────────────────────────────────────────────────
+#  config.yaml: ALL your personal details and links live here.
+#  Change a value, save, push, and the PDF + website rebuild
+#  themselves. Lines starting with # are notes and are ignored.
+# ─────────────────────────────────────────────────────────────
+
+# ── Launch switch ────────────────────────────────────────────
+# false = draft mode: search engines are told to ignore the site and
+#         a small "Draft" banner shows on the site.
+# true  = live. Flip this ONLY after Experior compliance approves.
+launched: false
+
+# ── About you ────────────────────────────────────────────────
+advisor:
+  name: "Rachel Gonsalves"
+  title: "Licensed Life & Health Insurance Advisor"
+  province: "Ontario"
+  agency: "Experior Financial Group Inc."
+  service_area: "Simcoe County & the GTA"
+  phone: "416.919.4565"
+  email: "RGonsalves@ExperiorFinancial.ca"
+  website: "https://rachelgonsalves.com"
+
+# ── Links (buttons & QR codes use these) ─────────────────────
+links:
+  # "Book your free EFA" buttons. Swap for a Calendly/Google link anytime.
+  booking_url: "https://rachelgonsalves.com"
+  # "Curious about a career?" link. TODO: replace with your career info-call link.
+  career_url: "https://rachelgonsalves.com"
+  # Filled in during Phase 2 (Tally form ID, e.g. "mDxyz1").
+  tally_form_id: ""
+
+# ── Website ──────────────────────────────────────────────────
+site:
+  # Address the site will live at once DNS is set up (Phase 2).
+  custom_domain: "workbook.rachelgonsalves.com"
+  github_pages_url: "https://rachelgonsalves.github.io/workbook/"
+
+# ── Workbook ─────────────────────────────────────────────────
+workbook:
+  title: "Money Made Manageable"
+  subtitle: "A no-shame, 5-minutes-at-a-time money workbook for Canadian families"
+  pdf_filename: "ADHD-Money-Workbook.pdf"
+
+# ── Colours (calm & simple; mauve is the only accent) ────────
+colours:
+  mauve: "#8B7394"
+  mauve_dark: "#5E4A67"
+  mauve_tint: "#F4EFF6"
+  ink: "#2E2A30"
+  line: "#D9D2DC"
+  white: "#FFFFFF"
+
+# ── Compliance text (edit here if Experior asks for changes) ──
+disclosure:
+  licence_line: "Rachel Gonsalves, Licensed Life & Health Insurance Advisor (Ontario) | Experior Financial Group Inc."
+  short: "For educational purposes only. Not financial, tax, legal or insurance advice."
+  full: >-
+    This workbook is for educational purposes only and is not financial, tax, legal or
+    insurance advice. Insurance products are subject to eligibility and underwriting.
+    Any examples are illustrative only; your situation will be different. Speak with a
+    licensed professional about your situation.
+  career: >-
+    A provincial life insurance licence (LLQP) is required to advise on or sell insurance.
+    Results vary and depend on individual effort. No income is guaranteed.
+  casl_optin: "Yes, send me occasional tips and updates from Rachel Gonsalves. I can unsubscribe anytime."

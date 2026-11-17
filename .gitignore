@@ -1,0 +1,33 @@
+# Safety net: this repo is PUBLIC. Marketing content only, never client files.
+
+# Client / confidential file types (should never be in this folder anyway)
+*.NIS
+*.nis
+*.heic
+*.HEIC
+*application*.pdf
+*signed*.pdf
+*void*
+*identification*
+
+# Build output (built fresh by GitHub Actions)
+/build/
+/dist/
+*.pdf
+!assets/**/*.pdf
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Secrets
+.env
+*.key
+
+# OS / editor junk
+Thumbs.db
+desktop.ini
+.DS_Store
+.vscode/
