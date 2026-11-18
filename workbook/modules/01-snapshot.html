@@ -57,19 +57,14 @@
       ("payment", "Monthly payment ($)", ""),
   ], rows=6, total="Total monthly payments") }}
 
-  <div class="callout">
-    <p><strong>Big numbers can feel heavy.</strong> Writing them down is the brave part, and you just did it.</p>
-  </div>
-
-  {{ ui.stop() }}
+  {{ ui.stop("Big numbers can feel heavy. Writing them down is the brave part, and you just did it.") }}
 </section>
 
 {# ── Step 3: What protection do I already have? ──────────────── #}
 <section class="page">
   <div class="page-label">Module 1 · Step 3 of {{ m.steps | length }}</div>
   {{ ui.step("m1_s3", m.steps[2][0]) }}
-  <p>Tick one box on each line. Your work benefits booklet, your HR website or a policy in a drawer
-  can help. “Not sure” is a perfectly good answer.</p>
+  <p>Tick one box on each line. A work benefits booklet or HR website can help.</p>
 
   {{ ui.choices("m1_prot", [
       ("group", "Health & dental through work", "Often called “group benefits”"),
@@ -92,7 +87,7 @@
 <section class="page">
   <div class="page-label">Module 1 · Step 4 of {{ m.steps | length }}</div>
   {{ ui.step("m1_s4", m.steps[3][0]) }}
-  <p>Copy two numbers from earlier pages, then do one subtraction. Rounding is fine.</p>
+  <p>Copy two numbers, then do one subtraction. Rounding is fine.</p>
 
   <table class="big-numbers">
     {{ ui.big_number(1, "m1_n1_in", "Money in each month", "Your total from Step 1") }}

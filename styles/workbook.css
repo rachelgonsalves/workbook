@@ -237,7 +237,7 @@ table.choices td.opt input[type=checkbox] { width: 16pt; height: 16pt; margin: 0
 
 /* ── Big summary numbers ─────────────────────────────────────── */
 table.big-numbers { width: 100%; border-collapse: collapse; margin: 6pt 0 14pt; }
-table.big-numbers td { padding: 12pt 0; border-bottom: 1pt solid var(--line); vertical-align: middle; }
+table.big-numbers td { padding: 9pt 0; border-bottom: 1pt solid var(--line); vertical-align: middle; }
 table.big-numbers tr.result td { border-bottom: none; border-top: 2pt solid var(--mauve); }
 table.big-numbers td.n { width: 42pt; }
 table.big-numbers td.label { font-size: 17pt; font-weight: 700; color: var(--mauve-dark); padding-right: 12pt; line-height: 1.25; }
@@ -251,7 +251,7 @@ table.big-numbers input[type=text] { height: 34pt; font-size: 18pt; }
 
 /* ── Module finished ─────────────────────────────────────────── */
 .done {
-  margin-top: 22pt; padding: 16pt 20pt; text-align: center;
+  margin-top: 18pt; padding: 12pt 20pt; text-align: center;
   background: var(--mauve-tint); border: 1.5pt solid var(--mauve); border-radius: 10pt;
   break-inside: avoid;
 }
