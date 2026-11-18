@@ -54,6 +54,7 @@
       <p class="method-fit"><strong>Might suit you if</strong> quick wins keep you going.
       Each paid-off debt is a little celebration.</p>
     </td>
+    <td class="gap"></td>
     <td class="method">
       <div class="method-name">Avalanche</div>
       <div class="method-how">Highest interest rate first</div>
@@ -69,11 +70,11 @@
   <p class="small">Pictures are illustrative only. Bar length shows the size of each balance.</p>
 
   <p class="notes-label">Which one will I try first?</p>
-  <ul class="checks choice-row">
-    {{ ui.check("m2_method_snowball", "Snowball") }}
-    {{ ui.check("m2_method_avalanche", "Avalanche") }}
-    {{ ui.check("m2_method_unsure", "Not sure yet") }}
-  </ul>
+  <table class="choice-row"><tr>
+    <td><ul class="checks">{{ ui.check("m2_method_snowball", "Snowball") }}</ul></td>
+    <td><ul class="checks">{{ ui.check("m2_method_avalanche", "Avalanche") }}</ul></td>
+    <td><ul class="checks">{{ ui.check("m2_method_unsure", "Not sure yet") }}</ul></td>
+  </tr></table>
 
   <div class="callout">
     <p><strong>The best plan is the one you’ll actually stick with.</strong> You can switch anytime.</p>
@@ -97,6 +98,8 @@
     <p><strong>Illustrative example only:</strong> the store card ($50 a month) is paid off.
     The car loan payment is $300. $300 + $50 = $350 a month now goes to the car loan.</p>
   </div>
+
+  {{ ui.stop("Next time, start with whichever debt is at the top of your list.") }}
 </section>
 
 {# ── Step 4: Mortgage basics ─────────────────────────────────── #}
@@ -114,15 +117,15 @@
 
   <p class="notes-label">Questions to ask your lender (tick when asked):</p>
   <ul class="checks">
-    {{ ui.check("m2_q_extra", "Can I make extra payments? How much each year, with no penalty?") }}
+    {{ ui.check("m2_q_extra", "Can I make extra payments without a penalty?") }}
     {{ ui.check("m2_q_increase", "Can I raise my regular payment?") }}
-    {{ ui.check("m2_q_schedule", "Would a different payment schedule (e.g. every two weeks) change anything for me?") }}
+    {{ ui.check("m2_q_schedule", "Would paying every two weeks change anything for me?") }}
     {{ ui.check("m2_q_break", "What would it cost to break my mortgage early?") }}
   </ul>
 
   <div class="callout">
-    <p><strong>Renewal reminder:</strong> many people start looking at their options a few months before
-    renewal. Rules vary by lender, so check with your lender or a licensed mortgage professional.</p>
+    <p><strong>Renewal reminder:</strong> many people start comparing options a few months before renewal.
+    Ask your lender or a licensed mortgage professional.</p>
   </div>
 
   {{ ui.module_done(m.n) }}
