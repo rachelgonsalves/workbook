@@ -83,12 +83,12 @@
       "not sure" pointing to the EFA
 
 ### 1F. Module 4: The "Future You" Emergency & Legacy Setup
-- [ ] 🤖 ⏱ **Emergency fund ladder:** step 1 starter cushion → step 2 one month → step 3 three to six
+- [x] 🤖 ⏱ **Emergency fund ladder:** step 1 starter cushion → step 2 one month → step 3 three to six
       months (fill-in goal boxes)
-- [ ] 🤖 ⏱ **TFSA / RRSP / RESP / FHSA in one line each,** plus "this might fit if…", with a link to
+- [x] 🤖 ⏱ **TFSA / RRSP / RESP / FHSA in one line each,** plus "this might fit if…", with a link to
       canada.ca for current limits (no hard-coded numbers)
-- [ ] 🤖 ⏱ **Beneficiary checkup:** table of account/policy / who's named / last checked / ✓ up to date
-- [ ] 🤖 ⏱ **Will & Power of Attorney reminder:** short checklist (have one? where is it? who knows?)
+- [x] 🤖 ⏱ **Beneficiary checkup:** table of account/policy / who's named / last checked / ✓ up to date
+- [x] 🤖 ⏱ **Will & Power of Attorney reminder:** short checklist (have one? where is it? who knows?)
 
 ### 1G. Module 5: Your Next Step
 - [ ] 🤖 **"What a free EFA looks like":** about 30–60 min, no cost, no pressure, what to bring
