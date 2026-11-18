@@ -1,0 +1,79 @@
+{% import "workbook/_components.html" as ui %}
+{% from "workbook/_outline.html" import modules %}
+{% set m = modules[4] %}
+{#- Module 5: Your Next Step.
+    Layout: one overview page, then one page per 5-minute step.
+    Step names come from workbook/_outline.html.
+    Field names start with m5_ so they never clash with other modules.
+    COMPLIANCE: calm call to action only. Say what the EFA is, how long it takes, no cost,
+    no pressure. No urgency ("act now"), no promises about outcomes. -#}
+
+{# ── Overview page ───────────────────────────────────────────── #}
+<section class="page">
+  {{ ui.progress(m.n, m.short) }}
+  <h2 class="module-title">{{ m.title }}</h2>
+  <p class="lead">You’ve done the hard part. This last module shows what a free EFA looks like
+  and how to book one, if and when you want to.</p>
+
+  {{ ui.overview(m.steps) }}
+
+  <div class="callout">
+    <p><strong>Totally optional.</strong> This workbook is yours to keep and use either way.</p>
+  </div>
+</section>
+
+{# ── Step 1: What a free EFA looks like ──────────────────────── #}
+<section class="page">
+  <div class="page-label">Module 5 · Step 1 of {{ m.steps | length }}</div>
+  {{ ui.step("m5_s1", m.steps[0][0]) }}
+  <p>An <strong>Experior Financial Analysis (EFA)</strong> is a no-cost, no-pressure chat about
+  your goals. It usually takes about 30 to 60 minutes, by phone or video.</p>
+
+  <p class="notes-label">How it usually goes</p>
+  <table class="rules">
+    <tr>
+      <td class="n"><div class="num">1</div></td>
+      <td><span class="rule">We talk about you</span>
+      <span class="why">Your family, your goals, and what’s on your mind about money.</span></td>
+    </tr>
+    <tr>
+      <td class="n"><div class="num">2</div></td>
+      <td><span class="rule">We look at what’s already in place</span>
+      <span class="why">Your workbook pages can make this part quick.</span></td>
+    </tr>
+    <tr>
+      <td class="n"><div class="num">3</div></td>
+      <td><span class="rule">You leave with a clearer picture</span>
+      <span class="why">Plain-English ideas to think about. Any next step is your choice, in your own time.</span></td>
+    </tr>
+  </table>
+
+  <div class="callout">
+    <p><strong>No cost. No obligation. No pressure.</strong> You don’t have to buy anything,
+    and no question is too small.</p>
+  </div>
+</section>
+
+{# ── Step 2: Book your free EFA ──────────────────────────────── #}
+<section class="page">
+  <div class="page-label">Module 5 · Step 2 of {{ m.steps | length }}</div>
+  {{ ui.step("m5_s2", m.steps[1][0]) }}
+  <p>When you’re ready, pick a time that suits you. There’s no rush.</p>
+
+  {{ ui.cta(c.links.booking_url, "Book your free, no-obligation EFA",
+      "Prefer to call or email? " ~ c.advisor.phone ~ " · " ~ c.advisor.email) }}
+
+  <p class="notes-label">What to bring (tick when ready):</p>
+  <ul class="checks">
+    {{ ui.check("m5_bring_workbook", "This workbook, even if only some pages are filled in") }}
+    {{ ui.check("m5_bring_benefits", "Your work benefits booklet, if you have one") }}
+    {{ ui.check("m5_bring_policies", "Any insurance policies you already have") }}
+    {{ ui.check("m5_bring_questions", "Your questions, big or small") }}
+  </ul>
+
+  <table class="fill">
+    {{ ui.row("m5_booked", "My EFA is booked for", hint="Date and time") }}
+  </table>
+
+  {{ ui.module_done(m.n, last=True) }}
+</section>

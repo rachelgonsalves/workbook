@@ -1,0 +1,28 @@
+{#- Career opportunity page (back matter).
+    COMPLIANCE (CLAUDE.md §6): no income or earnings claims, no hype ("be your own boss",
+    "passive income"). Say plainly: LLQP licence required, results vary, it takes work.
+    The required wording comes from config.yaml → disclosure.career. -#}
+{% import "workbook/_components.html" as ui %}
+<section class="page" id="career">
+  <div class="page-label">One more thing</div>
+  <h2 class="page-title">Curious about a career helping families?</h2>
+  <p class="lead">Some people who use this workbook find they enjoy helping others feel calmer
+  about money. If that sounds like you, a career in financial services might be worth a look.</p>
+
+  <p class="notes-label">What it can look like</p>
+  <ul class="bullets">
+    <li><img src="assets/icons/check.svg" alt="">Flexible hours, often from home</li>
+    <li><img src="assets/icons/check.svg" alt="">Independent work, with training and mentorship available</li>
+    <li><img src="assets/icons/check.svg" alt="">Helping families understand and protect what matters to them</li>
+  </ul>
+
+  <div class="callout">
+    <p><strong>What it takes:</strong> a provincial life insurance licence is required. In Canada
+    that starts with the <strong>LLQP</strong> (Life Licence Qualification Program), a course and exam.
+    Like any career, it takes time, learning and steady effort.</p>
+  </div>
+
+  {{ ui.cta(c.links.career_url, "Learn about the career") }}
+
+  <p class="small">{{ c.disclosure.career }}</p>
+</section>

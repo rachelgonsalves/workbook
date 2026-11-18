@@ -110,12 +110,27 @@
 <textarea name="{{ name }}" title="{{ label }}"{% if height %} style="height: {{ height }}"{% endif %}></textarea>
 {%- endmacro %}
 
-{# End-of-module celebration, pointing back to the progress map #}
-{% macro module_done(n) -%}
+{# End-of-module celebration, pointing back to the progress map. last=True for the final module. #}
+{% macro module_done(n, last=False) -%}
 <div class="done">
   <img src="assets/icons/check.svg" alt="">
+  {% if last %}
+  <div><strong>You finished the whole workbook!</strong>
+  <span>Tick Module {{ n }} off on your progress map (page {{ pageref("progress-map") }}). That took real effort. Well done.</span></div>
+  {% else %}
   <div><strong>You finished Module {{ n }}!</strong>
   <span>Tick it off on your progress map (page {{ pageref("progress-map") }}). Then take a break. You earned it.</span></div>
+  {% endif %}
+</div>
+{%- endmacro %}
+
+{# Call-to-action card: big button + the link written out, for people reading on paper.
+   QR code: planned, waiting on Rachel's OK for a small QR library. #}
+{% macro cta(url, label, note="") -%}
+<div class="cta">
+  <a class="button" href="{{ url }}">{{ label }}</a>
+  <div class="cta-url">Or type <strong>{{ url | pretty_url }}</strong> into your browser.</div>
+  {% if note %}<div class="cta-note">{{ note }}</div>{% endif %}
 </div>
 {%- endmacro %}
 

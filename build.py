@@ -33,7 +33,16 @@ def make_env() -> Environment:
         undefined=StrictUndefined,
     )
     env.filters["css_string"] = css_string
+    env.filters["pretty_url"] = pretty_url
     return env
+
+
+def pretty_url(url: str) -> str:
+    """Short, printable version of a link: https://www.site.com/ -> site.com"""
+    short = str(url).split("://", 1)[-1]
+    if short.startswith("www."):
+        short = short[4:]
+    return short.rstrip("/")
 
 
 def css_string(text: str) -> Markup:

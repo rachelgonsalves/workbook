@@ -1,0 +1,25 @@
+{#- Back page: About Rachel + required disclosures (CLAUDE.md §6).
+    All text comes from config.yaml (advisor + disclosure), so compliance edits happen there. -#}
+<section class="page" id="about">
+  <h2 class="page-title">About Rachel</h2>
+  <p class="lead">{{ c.advisor.about }}</p>
+
+  <table class="contact">
+    <tr><td class="lbl">Phone</td><td><a href="tel:+1{{ c.advisor.phone | replace('.', '') }}">{{ c.advisor.phone }}</a></td></tr>
+    <tr><td class="lbl">Email</td><td><a href="mailto:{{ c.advisor.email }}">{{ c.advisor.email }}</a></td></tr>
+    <tr><td class="lbl">Website</td><td><a href="{{ c.advisor.website }}">{{ c.advisor.website | pretty_url }}</a></td></tr>
+    <tr><td class="lbl">Serving</td><td>{{ c.advisor.service_area }}</td></tr>
+  </table>
+
+  <div class="thanks">
+    <p><strong>Thank you for spending time on your money.</strong> Every page you filled in counts,
+    even the ones you only started.</p>
+  </div>
+
+  <div class="disclosure">
+    <h3>Important information</h3>
+    <p><strong>{{ c.disclosure.licence_line }}</strong></p>
+    <p>{{ c.disclosure.full }}</p>
+    <p>Registered account rules and limits change often. Check current details at canada.ca.</p>
+  </div>
+</section>
