@@ -4,7 +4,7 @@
 > Boxes marked 🤖 are Claude's job. Boxes marked 🙋 need Rachel (a click, a login or a decision).
 > Rules live in [CLAUDE.md](CLAUDE.md).
 
-**Progress:** Phase 0 ☐ · Phase 1 ☐ · Phase 2 ☐ · Phase 3 ☐
+**Progress:** Phase 0 ✅ · Phase 1 ☐ · Phase 2 ☐ · Phase 3 ☐
 
 ---
 
@@ -28,11 +28,11 @@
 - [x] 🤖 Create the folder skeleton (`styles/`, `workbook/`, `site/`, `assets/`) and `requirements.txt`
 - [x] 🤖 `git init` this folder (**only** `lead-magnet/`, never `B:\Business`), first commit
 - [ ] 🙋 Replace the `career_url` placeholder in `config.yaml` with your career info-call link (whenever you have it)
-- [ ] 🙋 Create a GitHub repo, e.g. `workbook` (public, needed for free Pages). Claude can do it with the
-      GitHub CLI once Rachel says OK.
+- [x] 🙋 Create a GitHub repo, e.g. `workbook` (public, needed for free Pages). Claude can do it with the
+      GitHub CLI once Rachel says OK. → https://github.com/rachelgonsalves/workbook (draft site: https://rachelgonsalves.github.io/workbook/)
 - [x] 🤖 Add `.github/workflows/build.yml`: on every push → install WeasyPrint → run `build.py` →
       publish `site/` + the PDF to GitHub Pages
-- [ ] 🙋 Turn on GitHub Pages (Settings → Pages → Source: **GitHub Actions**)
+- [x] 🙋 Turn on GitHub Pages (Settings → Pages → Source: **GitHub Actions**)
 
 ---
 
