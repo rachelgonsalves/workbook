@@ -58,6 +58,66 @@
 <li><input type="checkbox" name="{{ name }}"><span>{{ text }}</span></li>
 {%- endmacro %}
 
+{# List table: one text box per cell, columns side by side.
+   cols  = [("name", "What it’s for", "wide"), ("balance", "Balance owing ($)", ""), ...]
+   total = label for a total box under the LAST column, or none.
+   Field names: prefix_1_name, prefix_1_balance, ..., prefix_total #}
+{% macro grid(prefix, cols, rows=5, total="") -%}
+<table class="grid">
+  <tr>{% for key, head, cls in cols %}<th class="{{ cls }}">{{ head }}</th>{% endfor %}</tr>
+  {% for i in range(1, rows + 1) %}
+  <tr>{% for key, head, cls in cols %}<td><input type="text" name="{{ prefix }}_{{ i }}_{{ key }}" title="{{ head }}, line {{ i }}"></td>{% endfor %}</tr>
+  {% endfor %}
+  {% if total %}
+  <tr class="total">
+    <td class="label" colspan="{{ cols | length - 1 }}">{{ total }}</td>
+    <td><input type="text" name="{{ prefix }}_total" title="{{ total }}"></td>
+  </tr>
+  {% endif %}
+</table>
+{%- endmacro %}
+
+{# Yes / No / Not sure table. items = [("key", "Label", "hint"), ...]
+   Field names: name_key_yes, name_key_no, name_key_unsure #}
+{% macro choices(name, items, options=[("yes", "Yes"), ("no", "No"), ("unsure", "Not sure")]) -%}
+<table class="choices">
+  <tr><th class="label-head"></th>{% for okey, olabel in options %}<th>{{ olabel }}</th>{% endfor %}</tr>
+  {% for key, label, hint in items %}
+  <tr>
+    <td class="label">{{ label }}{% if hint %}<span class="hint">{{ hint }}</span>{% endif %}</td>
+    {% for okey, olabel in options %}
+    <td class="opt"><input type="checkbox" name="{{ name }}_{{ key }}_{{ okey }}" title="{{ label }}: {{ olabel }}"></td>
+    {% endfor %}
+  </tr>
+  {% endfor %}
+</table>
+{%- endmacro %}
+
+{# One big summary number: (1) Label ....... $ [______] #}
+{% macro big_number(n, name, label, hint="", result=False) -%}
+<tr{% if result %} class="result"{% endif %}>
+  <td class="n"><div class="num">{{ n }}</div></td>
+  <td class="label">{{ label }}{% if hint %}<span class="hint">{{ hint }}</span>{% endif %}</td>
+  <td class="unit">$</td>
+  <td class="box"><input type="text" name="{{ name }}" title="{{ label }}"></td>
+</tr>
+{%- endmacro %}
+
+{# Free-writing box with a label above it #}
+{% macro notes(name, label, height="") -%}
+<p class="notes-label">{{ label }}</p>
+<textarea name="{{ name }}" title="{{ label }}"{% if height %} style="height: {{ height }}"{% endif %}></textarea>
+{%- endmacro %}
+
+{# End-of-module celebration, pointing back to the progress map #}
+{% macro module_done(n) -%}
+<div class="done">
+  <img src="assets/icons/check.svg" alt="">
+  <strong>You finished Module {{ n }}!</strong>
+  <span>Tick it off on your progress map (page <a class="pageref" href="#progress-map"></a>). Then take a break. You earned it.</span>
+</div>
+{%- endmacro %}
+
 {# Gentle stop point so readers can quit without guilt #}
 {% macro stop(text="Close the workbook here if you like. Come back whenever you're ready.") -%}
 <div class="stop">

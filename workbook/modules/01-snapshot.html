@@ -22,8 +22,8 @@
 
 {# ── Step 1: Money in ────────────────────────────────────────── #}
 <section class="page">
-  <div class="page-label">Module 1 · Step 1 of 4</div>
-  {{ ui.step("m1_s1", "Money in") }}
+  <div class="page-label">Module 1 · Step 1 of {{ m.steps | length }}</div>
+  {{ ui.step("m1_s1", m.steps[0][0]) }}
   <p>What lands in your bank account each month, <strong>after tax</strong>? Check one recent pay stub
   or bank statement. A good guess is fine.</p>
 
@@ -41,4 +41,71 @@
   </div>
 
   {{ ui.stop() }}
+</section>
+
+{# ── Step 2: Money owed ──────────────────────────────────────── #}
+<section class="page">
+  <div class="page-label">Module 1 · Step 2 of {{ m.steps | length }}</div>
+  {{ ui.step("m1_s2", m.steps[1][0]) }}
+  <p>List what you owe: just the balance and the monthly payment. No interest rates needed.
+  A recent statement or your banking app will have these numbers.</p>
+  <p class="small">Ideas: credit card, line of credit, car loan, student loan, buy now pay later, mortgage.</p>
+
+  {{ ui.grid("m1_debt", [
+      ("name", "What it’s for", "wide"),
+      ("balance", "Balance owing ($)", ""),
+      ("payment", "Monthly payment ($)", ""),
+  ], rows=6, total="Total monthly payments") }}
+
+  <div class="callout">
+    <p><strong>Big numbers can feel heavy.</strong> Writing them down is the brave part, and you just did it.</p>
+  </div>
+
+  {{ ui.stop() }}
+</section>
+
+{# ── Step 3: What protection do I already have? ──────────────── #}
+<section class="page">
+  <div class="page-label">Module 1 · Step 3 of {{ m.steps | length }}</div>
+  {{ ui.step("m1_s3", m.steps[2][0]) }}
+  <p>Tick one box on each line. Your work benefits booklet, your HR website or a policy in a drawer
+  can help. “Not sure” is a perfectly good answer.</p>
+
+  {{ ui.choices("m1_prot", [
+      ("group", "Health & dental through work", "Often called “group benefits”"),
+      ("grouplife", "Life insurance through work", "Usually part of your group benefits"),
+      ("life", "My own life insurance", "A policy in your name, not through work"),
+      ("mortgage", "Mortgage insurance", "Coverage you may have signed up for at the bank"),
+      ("ci", "Critical illness insurance", "Pays a lump sum after a serious illness that’s covered"),
+      ("di", "Disability insurance", "Pays part of your income if you can’t work"),
+  ]) }}
+
+  {{ ui.notes("m1_prot_notes", "Where is the paperwork kept?", "48pt") }}
+
+  <div class="callout">
+    <p><strong>Every “not sure” is a great question</strong> to bring to a free Experior Financial Analysis
+    (EFA): a no-cost, no-pressure chat about your goals.</p>
+  </div>
+</section>
+
+{# ── Step 4: My 3 numbers that matter ────────────────────────── #}
+<section class="page">
+  <div class="page-label">Module 1 · Step 4 of {{ m.steps | length }}</div>
+  {{ ui.step("m1_s4", m.steps[3][0]) }}
+  <p>Copy two numbers from earlier pages, then do one subtraction. Rounding is fine.</p>
+
+  <table class="big-numbers">
+    {{ ui.big_number(1, "m1_n1_in", "Money in each month", "Your total from Step 1") }}
+    {{ ui.big_number(2, "m1_n2_debt", "Debt payments each month", "Your total from Step 2") }}
+    {{ ui.big_number(3, "m1_n3_left", "What’s left for everything else", "Number 1 minus number 2. This covers rent, food, bills and saving.", result=True) }}
+  </table>
+
+  <div class="callout">
+    <p><strong>Is number 3 small, or below zero?</strong> You’re not alone, and it’s not a grade.
+    It’s a starting point. Module 2 has ideas that may help.</p>
+  </div>
+
+  {{ ui.notes("m1_noticed", "One thing I noticed (good or surprising):", "48pt") }}
+
+  {{ ui.module_done(1) }}
 </section>
