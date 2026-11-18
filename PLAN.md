@@ -103,8 +103,8 @@
 ### 1H. Build & test
 - [x] 🤖 `build.py` renders all modules in order into one HTML file → WeasyPrint → `ADHD-Money-Workbook.pdf`
 - [x] 🤖 GitHub Action builds the PDF automatically on every push
-- [ ] 🙋 Test: open in **Adobe Acrobat Reader** and **Chrome**, type in a few boxes, tick a few checkboxes,
-      save, reopen, print one page in black and white
+- [x] 🙋 Test: open in **Adobe Acrobat Reader** and **Chrome**, type in a few boxes, tick a few checkboxes,
+      save, reopen, print one page in black and white (passed 2026-11-18)
 - [x] 🤖 Run the compliance list (CLAUDE.md section 6) page by page and fix anything flagged
       (done 2026-11-18: 8 wording fixes. Questions to raise with Experior compliance are listed
       under Phase 3.)
