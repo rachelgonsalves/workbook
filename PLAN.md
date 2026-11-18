@@ -91,13 +91,15 @@
 - [x] 🤖 ⏱ **Will & Power of Attorney reminder:** short checklist (have one? where is it? who knows?)
 
 ### 1G. Module 5: Your Next Step
-- [ ] 🤖 **"What a free EFA looks like":** about 30–60 min, no cost, no pressure, what to bring
+- [x] 🤖 **"What a free EFA looks like":** about 30–60 min, no cost, no pressure, what to bring
       (this workbook!), what you get
 - [ ] 🤖 **Book button + QR code** → `booking_url` from `config.yaml`
-- [ ] 🤖 **Back page, "Curious about a flexible career helping families?"** Work-from-home, independent,
+      (button + printed link done 2026-11-18; QR code waiting on Rachel's OK to add the small free
+      `segno` QR library to the build)
+- [x] 🤖 **Back page, "Curious about a flexible career helping families?"** Work-from-home, independent,
       training available. **LLQP licence required, results vary, no income claims.** Link/QR →
       `career_url`.
-- [ ] 🤖 **About Rachel + full disclosure + disclaimer** (from `config.yaml`)
+- [x] 🤖 **About Rachel + full disclosure + disclaimer** (from `config.yaml`)
 
 ### 1H. Build & test
 - [ ] 🤖 `build.py` renders all modules in order into one HTML file → WeasyPrint → `ADHD-Money-Workbook.pdf`
