@@ -53,12 +53,12 @@
 
 ### 1B. Front matter
 - [x] 🤖 **Cover:** title, subtitle, "by Rachel Gonsalves", a simple mauve shape (no photo needed)
-- [ ] 🤖 **"How to use this workbook":** any order, 5 minutes at a time, round numbers are fine, no judgement
-- [ ] 🤖 **Your progress map:** 5 modules × checkboxes on one page, to tick and see progress
+- [x] 🤖 **"How to use this workbook":** any order, 5 minutes at a time, round numbers are fine, no judgement
+- [x] 🤖 **Your progress map:** 5 modules × checkboxes on one page, to tick and see progress
 
 ### 1C. Module 1: The "No-Shame" Money Snapshot
-- [ ] 🤖 Intro page: "This isn't a test. Messy numbers count."
-- [ ] 🤖 ⏱ **Money in:** monthly take-home pay boxes (you, partner, other income). Round numbers OK.
+- [x] 🤖 Intro page: "This isn't a test. Messy numbers count."
+- [x] 🤖 ⏱ **Money in:** monthly take-home pay boxes (you, partner, other income). Round numbers OK.
 - [ ] 🤖 ⏱ **Money owed:** simple list of name / balance / monthly payment. No interest math.
 - [ ] 🤖 ⏱ **What protection do I already have?** Checklist covering work group benefits, personal life
       insurance, mortgage insurance, critical illness, disability, and "not sure"

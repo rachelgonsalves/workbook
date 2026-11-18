@@ -47,6 +47,8 @@ The full checklist is in [PLAN.md](PLAN.md).
   (PDF print layout). Both use the colour variables generated from `config.yaml`.
 - **Reusable workbook pieces** (progress bar, micro-step, fill-in row, checklist, stop point) live in
   `workbook/_components.html`. Modules use these instead of hand-writing HTML.
+- **The module and step list lives in `workbook/_outline.html`.** The progress map and every module overview
+  read from it, so a step name is changed in one place only.
 - **Every fillable PDF field needs a unique `name`**, prefixed by module (`m1_`, `m2_`...).
 - **All personal details live in ONE file: `config.yaml`.** That's name, phone, email, booking link, career link,
   colours and disclosure text. Templates read from it. Changing a link means editing one line.
@@ -61,7 +63,8 @@ lead-magnet/
 ├── build.py           ← builds the PDF + site
 ├── requirements.txt
 ├── styles/            ← brand.css (site) + workbook.css (PDF)
-├── workbook/          ← workbook.html (master), cover.html, _components.html, modules/
+├── workbook/          ← workbook.html (master), cover.html, how-to-use.html, progress-map.html,
+│                        _components.html, _outline.html, modules/
 ├── site/              ← landing page, thank-you page, privacy page
 ├── assets/            ← fonts, icons, cover image
 └── .github/workflows/build.yml  ← auto-builds & publishes on every push
