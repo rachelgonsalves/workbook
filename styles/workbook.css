@@ -315,3 +315,30 @@ table.link-math { margin-top: 6pt; }
 .link input[type=text] { height: 22pt; }
 .roll { text-align: center; font-size: 12pt; font-weight: 700; color: var(--mauve); padding: 5pt 0; }
 .roll img { width: 16pt; height: 16pt; vertical-align: -4pt; margin-right: 4pt; }
+
+/* ── Side-by-side comparison ─────────────────────────────────── */
+table.compare { width: 100%; border-collapse: collapse; margin: 4pt 0 12pt; font-size: 13.5pt; line-height: 1.35; }
+table.compare th {
+  width: 37%; text-align: left; padding: 8pt 10pt; background: var(--mauve-tint);
+  font-family: "Lora", serif; font-weight: 600; font-size: 18pt; color: var(--mauve-dark);
+}
+table.compare th.topic { width: 26%; background: none; }
+table.compare td { padding: 8pt 10pt; vertical-align: top; border-bottom: 1pt solid var(--line); }
+table.compare td.topic { padding-left: 0; font-size: 12pt; font-weight: 700; color: var(--mauve-dark); }
+table.compare tr:last-child td { border-bottom: none; }
+
+/* ── People map: one card per person who counts on my income ── */
+table.people { width: 100%; border-collapse: separate; border-spacing: 0 8pt; margin: 0 0 4pt; }
+table.people td.gap { width: 10pt; }
+table.people td.person {
+  width: 48%; vertical-align: top;
+  border: 1.5pt solid var(--line); border-radius: 10pt; padding: 8pt 12pt 4pt;
+}
+.person-row { width: 100%; border-collapse: collapse; }
+.person-row td { padding: 0; vertical-align: middle; }
+.person-row td.lbl { width: 1%; white-space: nowrap; padding-right: 6pt; font-size: 12pt; font-weight: 700; color: var(--mauve-dark); }
+.person-row input[type=text] { height: 22pt; }
+.person .for { font-size: 11pt; font-weight: 700; color: var(--mauve); margin: 6pt 0 0; letter-spacing: 0.04em; text-transform: uppercase; }
+table.mini { width: 100%; border-collapse: collapse; }
+table.mini td { width: 50%; padding: 0; vertical-align: top; }
+table.mini ul.checks { margin: 0; }

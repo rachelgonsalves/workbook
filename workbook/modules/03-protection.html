@@ -1,0 +1,161 @@
+{% import "workbook/_components.html" as ui %}
+{% from "workbook/_outline.html" import modules %}
+{% set m = modules[2] %}
+{#- Module 3: Family Protection & Income Replacement.
+    Layout: one overview page, then one page per 5-minute step.
+    Step names come from workbook/_outline.html.
+    Field names start with m3_ so they never clash with other modules.
+    COMPLIANCE (most sensitive module): educational only. No product names, insurers, prices,
+    projections, cash values, tax claims or scare stats. Use "may" / "often" / "usually".
+    Every "not sure" points to the free EFA. -#}
+
+{# One person card on the people map #}
+{% macro person(i) -%}
+<td class="person">
+  <table class="person-row"><tr>
+    <td class="lbl">Name</td>
+    <td><input type="text" name="m3_p{{ i }}_name" title="Person {{ i }}: name"></td>
+  </tr></table>
+  <div class="for">They count on me for</div>
+  <table class="mini"><tr>
+    <td><ul class="checks small-checks">
+      {{ ui.check("m3_p" ~ i ~ "_home", "A home") }}
+      {{ ui.check("m3_p" ~ i ~ "_care", "Care or support") }}
+    </ul></td>
+    <td><ul class="checks small-checks">
+      {{ ui.check("m3_p" ~ i ~ "_bills", "Food & bills") }}
+      {{ ui.check("m3_p" ~ i ~ "_school", "School or childcare") }}
+    </ul></td>
+  </tr></table>
+  <table class="person-row"><tr>
+    <td class="lbl">For about how many more years?</td>
+    <td><input type="text" name="m3_p{{ i }}_years" title="Person {{ i }}: years"></td>
+  </tr></table>
+</td>
+{%- endmacro %}
+
+{# ── Overview page ───────────────────────────────────────────── #}
+<section class="page">
+  {{ ui.progress(m.n, m.short) }}
+  <h2 class="module-title">{{ m.title }}</h2>
+  <p class="lead">Your income takes care of people. This module helps you see who, and what’s already
+  in place if something unexpected happens.</p>
+
+  {{ ui.overview(m.steps) }}
+
+  <div class="callout">
+    <p><strong>No selling here.</strong> These pages explain the basics in plain English. They don’t
+    recommend any product. Your own situation is always best talked through with a licensed advisor.</p>
+  </div>
+</section>
+
+{# ── Step 1: Who depends on my income? ───────────────────────── #}
+<section class="page">
+  <div class="page-label">Module 3 · Step 1 of {{ m.steps | length }}</div>
+  {{ ui.step("m3_s1", m.steps[0][0]) }}
+  <p>Think of anyone who counts on your money: kids, a partner, a parent, a pet, even a business.
+  One card each. Guesses are fine.</p>
+
+  <table class="people">
+    {% for row in range(3) %}
+    <tr>{{ person(row * 2 + 1) }}<td class="gap"></td>{{ person(row * 2 + 2) }}</tr>
+    {% endfor %}
+  </table>
+
+  {{ ui.stop("Just knowing who’s on this page is a big step.") }}
+</section>
+
+{# ── Step 2: Term vs. permanent life insurance ───────────────── #}
+<section class="page">
+  <div class="page-label">Module 3 · Step 2 of {{ m.steps | length }}</div>
+  {{ ui.step("m3_s2", m.steps[1][0]) }}
+  <p>Life insurance may pay a lump sum to the people you choose if you pass away.
+  There are two main kinds. A simple way to picture them: <strong>term is a bit like renting,
+  permanent is a bit like owning.</strong></p>
+
+  {{ ui.compare("Term", "Permanent", [
+      ("How long it lasts", "A set number of years, for example 10 or 20", "Your whole life, as long as payments are kept up"),
+      ("Cost to start", "Usually lower", "Usually higher"),
+      ("When the years are up", "Coverage ends, or may be renewed at a new price", "Doesn’t end on a set date"),
+      ("Often used for", "Years when others count on you, like raising kids or paying a mortgage", "Lifelong needs, like final costs or leaving something behind"),
+  ]) }}
+
+  <div class="callout">
+    <p><strong>Neither one is “better.”</strong> Some families use one kind, some use the other,
+    and some use both. Details vary a lot from policy to policy.</p>
+  </div>
+
+  {{ ui.notes("m3_life_questions", "Questions I have about life insurance:", "44pt") }}
+</section>
+
+{# ── Step 3: Critical illness insurance ──────────────────────── #}
+<section class="page">
+  <div class="page-label">Module 3 · Step 3 of {{ m.steps | length }}</div>
+  {{ ui.step("m3_s3", m.steps[2][0]) }}
+  <p><strong>What it is:</strong> critical illness insurance may pay a one-time lump sum if you’re
+  diagnosed with a serious illness listed in the policy, such as some cancers, a heart attack or a
+  stroke. Which illnesses are covered, and any waiting period, depend on the policy.</p>
+
+  <p class="notes-label">If I got seriously ill, what would worry me most? (tick any)</p>
+  <ul class="checks">
+    {{ ui.check("m3_ci_bills", "Paying the bills while I’m off work") }}
+    {{ ui.check("m3_ci_partner", "My partner taking time off to help me") }}
+    {{ ui.check("m3_ci_costs", "Costs my health plan may not cover, like some medications or travel") }}
+    {{ ui.check("m3_ci_kids", "Extra childcare or help at home") }}
+  </ul>
+
+  <p class="notes-label">Questions to ask (tick when you know the answer):</p>
+  <ul class="checks">
+    {{ ui.check("m3_ciq_have", "Do I already have any critical illness coverage, through work or my own?") }}
+    {{ ui.check("m3_ciq_which", "Which illnesses would it cover?") }}
+    {{ ui.check("m3_ciq_wait", "Is there a waiting period before it pays?") }}
+  </ul>
+
+  {{ ui.stop() }}
+</section>
+
+{# ── Step 4: Disability insurance ────────────────────────────── #}
+<section class="page">
+  <div class="page-label">Module 3 · Step 4 of {{ m.steps | length }}</div>
+  {{ ui.step("m3_s4", m.steps[3][0]) }}
+  <p>Your ability to earn may be one of your biggest money assets. <strong>Disability insurance</strong>
+  may pay part of your income if illness or injury keeps you from working.</p>
+
+  {{ ui.compare("Through work", "My own policy", [
+      ("If I change jobs", "Often ends when I leave", "Usually stays with me"),
+      ("How much it pays", "Often part of my pay, set by the plan", "Set when I apply"),
+      ("Who decides the terms", "My employer’s plan", "Me, when I apply"),
+  ]) }}
+
+  {{ ui.choices("m3_di", [
+      ("short", "Short-term disability through work", ""),
+      ("long", "Long-term disability through work", ""),
+      ("own", "My own disability insurance", ""),
+  ]) }}
+
+  <table class="fill">
+    {{ ui.row("m3_di_months", "If I couldn’t work, we could manage for about", unit_after="months") }}
+  </table>
+</section>
+
+{# ── Step 5: "Do I have enough?" check ───────────────────────── #}
+<section class="page">
+  <div class="page-label">Module 3 · Step 5 of {{ m.steps | length }}</div>
+  {{ ui.step("m3_s5", m.steps[4][0]) }}
+  <p>No formula, no math. Just your gut feeling on each line.</p>
+
+  {{ ui.choices("m3_enough", [
+      ("home", "If I passed away, my family could stay in our home", ""),
+      ("bills", "If I passed away, my family could cover everyday bills for a while", ""),
+      ("sick", "If I got seriously ill, we could pay the bills while I recover", ""),
+      ("work", "If I couldn’t work for six months, we’d be okay", ""),
+      ("partner", "I know what coverage my partner has", ""),
+  ]) }}
+
+  <div class="callout">
+    <p><strong>Every “no” or “not sure” is worth a conversation.</strong> Bring this page to a free
+    Experior Financial Analysis (EFA). Module 5 shows how to book one.</p>
+  </div>
+
+  {{ ui.module_done(m.n) }}
+</section>

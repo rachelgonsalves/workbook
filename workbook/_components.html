@@ -172,6 +172,16 @@
 <div class="roll"><img src="assets/icons/arrow-down.svg" alt="">{{ text }}</div>
 {%- endmacro %}
 
+{# Side-by-side comparison. rows = [("Topic", "left text", "right text"), ...] #}
+{% macro compare(left, right, rows) -%}
+<table class="compare">
+  <tr><th class="topic"></th><th>{{ left }}</th><th>{{ right }}</th></tr>
+  {% for topic, a, b in rows %}
+  <tr><td class="topic">{{ topic }}</td><td>{{ a }}</td><td>{{ b }}</td></tr>
+  {% endfor %}
+</table>
+{%- endmacro %}
+
 {# Gentle stop point so readers can quit without guilt #}
 {% macro stop(text="Close the workbook here if you like. Come back whenever you're ready.") -%}
 <div class="stop">
