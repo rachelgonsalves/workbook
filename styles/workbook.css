@@ -103,11 +103,34 @@ p { margin: 0 0 12pt; }
 .module-title { font-family: "GreatVibes"; font-weight: 400; font-size: 44pt; line-height: 1.1; margin-bottom: 8pt; }
 .lead { font-size: 18pt; margin-bottom: 24pt; }
 
+/* ── Module overview: steps at a glance ────────────────────── */
+.overview { margin-top: 30pt; border: 1.5pt solid var(--line); border-radius: 10pt; padding: 18pt 22pt 6pt; }
+.overview-head {
+  font-size: 11pt; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--mauve-dark); margin-bottom: 8pt;
+}
+.overview ol { list-style: none; padding: 0; margin: 0; }
+.overview li { display: flex; align-items: center; gap: 14pt; padding: 11pt 0; border-bottom: 1pt solid var(--line); }
+.overview li:last-child { border-bottom: none; }
+.overview .num {
+  flex: none; width: 26pt; height: 26pt; border-radius: 50%;
+  background: var(--mauve-tint); border: 1.2pt solid var(--mauve);
+  color: var(--mauve-dark); font-weight: 700; font-size: 13pt; text-align: center; line-height: 26pt;
+}
+.overview .t { flex: 1; font-size: 17pt; }
+.overview .time { flex: none; font-size: 12pt; font-weight: 700; color: var(--mauve-dark); }
+.overview .time img { width: 14pt; height: 14pt; vertical-align: -2pt; margin-right: 3pt; }
+.overview-foot { font-size: 13pt; color: #5A5560; padding-top: 6pt; }
+
 /* ── Micro-step: [ ] Title ....... (clock) 5 min ──────────────── */
 .step {
   display: flex; align-items: center; gap: 10pt;
   border-bottom: 1.5pt solid var(--line);
-  padding-bottom: 8pt; margin: 22pt 0 12pt;
+  padding-bottom: 8pt; margin: 0 0 14pt;
+}
+.page-label {
+  font-size: 11pt; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--mauve); margin-bottom: 18pt;
 }
 .step input[type=checkbox] { width: 18pt; height: 18pt; margin: 0; flex: none; }
 .step .title { flex: 1; font-size: 20pt; font-weight: 700; color: var(--mauve-dark); }

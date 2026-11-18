@@ -11,6 +11,20 @@
 </div>
 {%- endmacro %}
 
+{# Module overview: the module's steps at a glance, so the whole job looks small.
+   steps = [("Money in", 5), ("Money owed", 5), ...] #}
+{% macro overview(steps) -%}
+<div class="overview">
+  <div class="overview-head">In this module</div>
+  <ol>
+    {% for title, minutes in steps %}
+    <li><span class="num">{{ loop.index }}</span><span class="t">{{ title }}</span><span class="time"><img src="assets/icons/clock.svg" alt="">{{ minutes }} min</span></li>
+    {% endfor %}
+  </ol>
+  <p class="overview-foot">About {{ steps | sum(attribute=1) }} minutes in total. Do one step today, or all of them. Any order works.</p>
+</div>
+{%- endmacro %}
+
 {# Micro-step header: [ ] Title ......... (clock) 5 min #}
 {% macro step(name, title, minutes=5) -%}
 <div class="step">
