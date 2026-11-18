@@ -42,13 +42,14 @@
 (final title to be confirmed)
 
 ### 1A. Design system (build once, reuse everywhere)
-- [ ] 🤖 `styles/brand.css`: colour tokens, fonts, Letter page size, wide margins, 16pt body, 28pt headings
-- [ ] 🤖 Reusable pieces: **progress bar** ("Module 2 of 5"), **micro-step checkbox** ("⏱ 5 min"),
+- [x] 🤖 `styles/workbook.css`: colour tokens, embedded fonts, Letter page size, wide margins, 16pt body, 28pt headings
+- [x] 🤖 Reusable pieces: **progress bar** ("Module 2 of 5"), **micro-step checkbox** ("⏱ 5 min"),
       **fill-in box**, **callout box**, **"Done for today? That still counts."** stop point,
-      **page footer** with the short disclaimer and page number
-- [ ] 🤖 Make inputs fillable: text boxes, number boxes and checkboxes become real PDF form fields
+      **page footer** with the short disclaimer and page number, plus a **module overview** page listing each module's 5-minute steps
+- [x] 🤖 Make inputs fillable: text boxes, number boxes and checkboxes become real PDF form fields
       (WeasyPrint `pdf_forms`)
-- [ ] 🤖 Build a 2-page sample PDF to test the look → 🙋 Rachel approves the look before the full build
+- [x] 🤖 Build a sample PDF to test the look (cover + Module 1 overview + Step 1 "Money in")
+- [ ] 🙋 Rachel approves the look before the full build
 
 ### 1B. Front matter
 - [ ] 🤖 **Cover:** title, subtitle, "by Rachel Gonsalves", a simple mauve shape (no photo needed)
