@@ -59,10 +59,10 @@
 ### 1C. Module 1: The "No-Shame" Money Snapshot
 - [x] 🤖 Intro page: "This isn't a test. Messy numbers count."
 - [x] 🤖 ⏱ **Money in:** monthly take-home pay boxes (you, partner, other income). Round numbers OK.
-- [ ] 🤖 ⏱ **Money owed:** simple list of name / balance / monthly payment. No interest math.
-- [ ] 🤖 ⏱ **What protection do I already have?** Checklist covering work group benefits, personal life
+- [x] 🤖 ⏱ **Money owed:** simple list of name / balance / monthly payment. No interest math.
+- [x] 🤖 ⏱ **What protection do I already have?** Checklist covering work group benefits, personal life
       insurance, mortgage insurance, critical illness, disability, and "not sure"
-- [ ] 🤖 ⏱ **My 3 numbers that matter:** money in, monthly debt payments, what's left. One summary box.
+- [x] 🤖 ⏱ **My 3 numbers that matter:** money in, monthly debt payments, what's left. One summary box.
 
 ### 1D. Module 2: The Debt & Mortgage Accelerator
 - [ ] 🤖 ⏱ **Debt thermometers:** colour-in bars, one per debt, to see progress at a glance
