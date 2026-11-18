@@ -134,7 +134,7 @@ table.map td.card {
 }
 .card-title { font-size: 17pt; font-weight: 700; color: var(--mauve-dark); margin-bottom: 4pt; }
 ul.checks.small-checks { margin: 0 0 4pt; font-size: 12.5pt; line-height: 1.3; }
-ul.checks.small-checks li { padding: 2pt 0; align-items: flex-start; }
+ul.checks.small-checks li { padding: 3.5pt 0; align-items: flex-start; }
 table.side-by-side { width: 100%; border-collapse: collapse; }
 table.side-by-side td { width: 50%; vertical-align: top; padding: 0; }
 ul.checks.small-checks input[type=checkbox] { width: 13pt; height: 13pt; margin-top: 1pt; }
