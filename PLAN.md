@@ -65,11 +65,11 @@
 - [x] 🤖 ⏱ **My 3 numbers that matter:** money in, monthly debt payments, what's left. One summary box.
 
 ### 1D. Module 2: The Debt & Mortgage Accelerator
-- [ ] 🤖 ⏱ **Debt thermometers:** colour-in bars, one per debt, to see progress at a glance
-- [ ] 🤖 ⏱ **Snowball vs. avalanche in 2 pictures:** smallest balance first vs. highest interest first,
+- [x] 🤖 ⏱ **Debt thermometers:** colour-in bars, one per debt, to see progress at a glance
+- [x] 🤖 ⏱ **Snowball vs. avalanche in 2 pictures:** smallest balance first vs. highest interest first,
       with "pick the one you'll actually stick with"
-- [ ] 🤖 ⏱ **Freed-up cash tracker:** when one debt is gone, its payment rolls to the next (fill-in chain)
-- [ ] 🤖 ⏱ **Mortgage basics:** prepayment options to ask your lender about, renewal-date reminder, and
+- [x] 🤖 ⏱ **Freed-up cash tracker:** when one debt is gone, its payment rolls to the next (fill-in chain)
+- [x] 🤖 ⏱ **Mortgage basics:** prepayment options to ask your lender about, renewal-date reminder, and
       questions to ask at renewal. Clearly *illustrative*, no rate promises.
 
 ### 1E. Module 3: Family Protection & Income Replacement Checklist
