@@ -93,11 +93,10 @@
 ### 1G. Module 5: Your Next Step
 - [x] 🤖 **"What a free EFA looks like":** about 30–60 min, no cost, no pressure, what to bring
       (this workbook!), what you get
-- [ ] 🤖 **Book button + QR code** → `booking_url` from `config.yaml`
-      (button + printed link done 2026-11-18; QR code waiting on Rachel's OK to add the small free
-      `segno` QR library to the build)
+- [x] 🤖 **Book button** → `booking_url` from `config.yaml`, with the link written out for paper
+      (QR codes skipped by Rachel's choice, 2026-11-18)
 - [x] 🤖 **Back page, "Curious about a flexible career helping families?"** Work-from-home, independent,
-      training available. **LLQP licence required, results vary, no income claims.** Link/QR →
+      training available. **LLQP licence required, results vary, no income claims.** Link →
       `career_url`.
 - [x] 🤖 **About Rachel + full disclosure + disclaimer** (from `config.yaml`)
 
