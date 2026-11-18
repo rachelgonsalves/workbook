@@ -1,0 +1,129 @@
+{% import "workbook/_components.html" as ui %}
+{% from "workbook/_outline.html" import modules %}
+{% set m = modules[1] %}
+{#- Module 2: The Debt & Mortgage Accelerator.
+    Layout: one overview page, then one page per 5-minute step.
+    Step names come from workbook/_outline.html.
+    Field names start with m2_ so they never clash with other modules.
+    Compliance: no rates, no promises, examples labelled "Illustrative example only". -#}
+
+{# ── Overview page ───────────────────────────────────────────── #}
+<section class="page">
+  {{ ui.progress(m.n, m.short) }}
+  <h2 class="module-title">{{ m.title }}</h2>
+  <p class="lead">Small, steady moves can add up. This module is about seeing your progress, not being perfect.</p>
+
+  {{ ui.overview(m.steps) }}
+
+  <div class="callout">
+    <p><strong>Before you start:</strong> keep your “Money owed” list from Module 1
+    (page {{ ui.pageref("m1-money-owed") }}) nearby. You’ll use it here.</p>
+  </div>
+</section>
+
+{# ── Step 1: Debt thermometers ───────────────────────────────── #}
+<section class="page">
+  <div class="page-label">Module 2 · Step 1 of {{ m.steps | length }}</div>
+  {{ ui.step("m2_s1", m.steps[0][0]) }}
+  <p>Pick up to four debts. Each bar has 10 boxes. Tick one box every time you pay off
+  another tenth of the starting balance.</p>
+  <p class="small"><strong>Illustrative example only:</strong> starting balance $3,000 → 1 box = $300
+  (just drop the last zero).</p>
+
+  {% for i in range(1, 5) %}{{ ui.thermometer("m2_th", i) }}{% endfor %}
+
+  {{ ui.stop("Seeing a bar fill up can make a long goal feel shorter.") }}
+</section>
+
+{# ── Step 2: Snowball or avalanche? ──────────────────────────── #}
+<section class="page">
+  <div class="page-label">Module 2 · Step 2 of {{ m.steps | length }}</div>
+  {{ ui.step("m2_s2", m.steps[1][0]) }}
+  <p>Two popular ways to choose which debt to focus on. With both, you keep making the
+  minimum payment on every debt, and put any extra money on just one.</p>
+
+  <table class="methods"><tr>
+    <td class="method">
+      <div class="method-name">Snowball</div>
+      <div class="method-how">Smallest balance first</div>
+      <div class="pic">
+        <div class="bar on" style="width: 30%">1st</div>
+        <div class="bar" style="width: 62%">2nd</div>
+        <div class="bar" style="width: 100%">3rd</div>
+      </div>
+      <p class="method-fit"><strong>Might suit you if</strong> quick wins keep you going.
+      Each paid-off debt is a little celebration.</p>
+    </td>
+    <td class="method">
+      <div class="method-name">Avalanche</div>
+      <div class="method-how">Highest interest rate first</div>
+      <div class="pic">
+        <div class="bar on" style="width: 75%">1st · highest rate</div>
+        <div class="bar" style="width: 100%">2nd · middle rate</div>
+        <div class="bar" style="width: 45%">3rd · lowest rate</div>
+      </div>
+      <p class="method-fit"><strong>Might suit you if</strong> you like knowing you may pay
+      less interest overall, even if the first win takes longer.</p>
+    </td>
+  </tr></table>
+  <p class="small">Pictures are illustrative only. Bar length shows the size of each balance.</p>
+
+  <p class="notes-label">Which one will I try first?</p>
+  <ul class="checks choice-row">
+    {{ ui.check("m2_method_snowball", "Snowball") }}
+    {{ ui.check("m2_method_avalanche", "Avalanche") }}
+    {{ ui.check("m2_method_unsure", "Not sure yet") }}
+  </ul>
+
+  <div class="callout">
+    <p><strong>The best plan is the one you’ll actually stick with.</strong> You can switch anytime.</p>
+  </div>
+</section>
+
+{# ── Step 3: Freed-up cash tracker ───────────────────────────── #}
+<section class="page">
+  <div class="page-label">Module 2 · Step 3 of {{ m.steps | length }}</div>
+  {{ ui.step("m2_s3", m.steps[2][0]) }}
+  <p>When a debt is paid off, don’t let its payment disappear. Add it to the next debt’s payment.
+  List your debts in the order you’ll tackle them.</p>
+
+  {{ ui.chain_link("m2_chain", 1, first=True) }}
+  {{ ui.roll_down() }}
+  {{ ui.chain_link("m2_chain", 2) }}
+  {{ ui.roll_down("Its new payment rolls down again") }}
+  {{ ui.chain_link("m2_chain", 3) }}
+
+  <div class="callout">
+    <p><strong>Illustrative example only:</strong> the store card ($50 a month) is paid off.
+    The car loan payment is $300. $300 + $50 = $350 a month now goes to the car loan.</p>
+  </div>
+</section>
+
+{# ── Step 4: Mortgage basics ─────────────────────────────────── #}
+<section class="page">
+  <div class="page-label">Module 2 · Step 4 of {{ m.steps | length }}</div>
+  {{ ui.step("m2_s4", m.steps[3][0]) }}
+  <p>Renting? Skip this page for now. If you have a mortgage, jot down three facts from your
+  latest mortgage statement.</p>
+
+  <table class="fill">
+    {{ ui.row("m2_mtg_lender", "Lender") }}
+    {{ ui.row("m2_mtg_renewal", "Renewal date") }}
+    {{ ui.money("m2_mtg_payment", "Regular payment", per="") }}
+  </table>
+
+  <p class="notes-label">Questions to ask your lender (tick when asked):</p>
+  <ul class="checks">
+    {{ ui.check("m2_q_extra", "Can I make extra payments? How much each year, with no penalty?") }}
+    {{ ui.check("m2_q_increase", "Can I raise my regular payment?") }}
+    {{ ui.check("m2_q_schedule", "Would a different payment schedule (e.g. every two weeks) change anything for me?") }}
+    {{ ui.check("m2_q_break", "What would it cost to break my mortgage early?") }}
+  </ul>
+
+  <div class="callout">
+    <p><strong>Renewal reminder:</strong> many people start looking at their options a few months before
+    renewal. Rules vary by lender, so check with your lender or a licensed mortgage professional.</p>
+  </div>
+
+  {{ ui.module_done(m.n) }}
+</section>

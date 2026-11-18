@@ -114,8 +114,62 @@
 <div class="done">
   <img src="assets/icons/check.svg" alt="">
   <strong>You finished Module {{ n }}!</strong>
-  <span>Tick it off on your progress map (page <a class="pageref" href="#progress-map"></a>). Then take a break. You earned it.</span>
+  <span>Tick it off on your progress map (page {{ pageref("progress-map") }}). Then take a break. You earned it.</span>
 </div>
+{%- endmacro %}
+
+{# Page number of another page, filled in automatically: page {{ ui.pageref("progress-map") }} #}
+{% macro pageref(target) -%}<a class="pageref" href="#{{ target }}"></a>{%- endmacro %}
+
+{# Debt thermometer: name, starting balance, size of one box, then 10 boxes to tick as it's paid down.
+   Field names: prefix_i_name, prefix_i_start, prefix_i_box, prefix_i_p1 ... prefix_i_p10 #}
+{% macro thermometer(prefix, i) -%}
+<div class="thermo-card">
+  <table class="thermo-head"><tr>
+    <td class="lbl">Debt</td>
+    <td class="name"><input type="text" name="{{ prefix }}_{{ i }}_name" title="Debt {{ i }}: what it is"></td>
+    <td class="lbl">Start&nbsp;$</td>
+    <td class="amt"><input type="text" name="{{ prefix }}_{{ i }}_start" title="Debt {{ i }}: starting balance"></td>
+    <td class="lbl">1&nbsp;box&nbsp;=&nbsp;$</td>
+    <td class="amt"><input type="text" name="{{ prefix }}_{{ i }}_box" title="Debt {{ i }}: amount per box"></td>
+  </tr></table>
+  <table class="thermo"><tr>
+    {% for p in range(1, 11) %}<td><input type="checkbox" name="{{ prefix }}_{{ i }}_p{{ p }}" title="Debt {{ i }}: {{ p * 10 }}% paid off"></td>{% endfor %}
+    <td class="flag"><img src="assets/icons/check.svg" alt="">Paid off!</td>
+  </tr></table>
+</div>
+{%- endmacro %}
+
+{# One link in the freed-up cash chain. first=True: just the payment (nothing freed up yet).
+   Field names: prefix_i_name, prefix_i_date, prefix_i_pay, prefix_i_freed, prefix_i_new #}
+{% macro chain_link(prefix, i, first=False) -%}
+<div class="link">
+  <table class="link-head"><tr>
+    <td class="n"><div class="num">{{ i }}</div></td>
+    <td class="name"><input type="text" name="{{ prefix }}_{{ i }}_name" title="Debt {{ i }}: what it is"></td>
+    <td class="lbl">Paid off on</td>
+    <td class="date"><input type="text" name="{{ prefix }}_{{ i }}_date" title="Debt {{ i }}: date paid off"></td>
+  </tr></table>
+  <table class="link-math"><tr>
+    {% if first %}
+    <td class="lbl">Monthly payment</td><td class="u">$</td>
+    <td class="amt"><input type="text" name="{{ prefix }}_{{ i }}_new" title="Debt {{ i }}: monthly payment"></td>
+    <td class="rest"></td>
+    {% else %}
+    <td class="lbl">Its payment</td><td class="u">$</td>
+    <td class="amt"><input type="text" name="{{ prefix }}_{{ i }}_pay" title="Debt {{ i }}: its own payment"></td>
+    <td class="op">+ freed-up</td><td class="u">$</td>
+    <td class="amt"><input type="text" name="{{ prefix }}_{{ i }}_freed" title="Debt {{ i }}: freed-up cash"></td>
+    <td class="op">=</td><td class="u">$</td>
+    <td class="amt"><input type="text" name="{{ prefix }}_{{ i }}_new" title="Debt {{ i }}: new monthly payment"></td>
+    {% endif %}
+  </tr></table>
+</div>
+{%- endmacro %}
+
+{# Arrow between chain links #}
+{% macro roll_down(text="When it’s paid off, its whole payment rolls down to the next one") -%}
+<div class="roll"><img src="assets/icons/arrow-down.svg" alt="">{{ text }}</div>
 {%- endmacro %}
 
 {# Gentle stop point so readers can quit without guilt #}
