@@ -113,8 +113,8 @@
 {% macro module_done(n) -%}
 <div class="done">
   <img src="assets/icons/check.svg" alt="">
-  <strong>You finished Module {{ n }}!</strong>
-  <span>Tick it off on your progress map (page {{ pageref("progress-map") }}). Then take a break. You earned it.</span>
+  <div><strong>You finished Module {{ n }}!</strong>
+  <span>Tick it off on your progress map (page {{ pageref("progress-map") }}). Then take a break. You earned it.</span></div>
 </div>
 {%- endmacro %}
 

@@ -252,13 +252,14 @@ table.big-numbers input[type=text] { height: 34pt; font-size: 18pt; }
 
 /* ── Module finished ─────────────────────────────────────────── */
 .done {
-  margin-top: 18pt; padding: 12pt 20pt; text-align: center;
+  margin-top: 18pt; padding: 12pt 18pt;
   background: var(--mauve-tint); border: 1.5pt solid var(--mauve); border-radius: 10pt;
+  display: flex; align-items: center; gap: 14pt;
   break-inside: avoid;
 }
-.done img { width: 28pt; height: 28pt; display: block; margin: 0 auto 6pt; }
-.done strong { display: block; font-size: 20pt; color: var(--mauve-dark); }
-.done span { font-size: 14pt; }
+.done img { width: 30pt; height: 30pt; flex: none; }
+.done strong { display: block; font-size: 19pt; color: var(--mauve-dark); }
+.done span { font-size: 13pt; }
 a.pageref { color: inherit; text-decoration: none; }
 a.pageref::after { content: target-counter(attr(href), page); }
 
@@ -277,7 +278,7 @@ table.thermo td input[type=checkbox] {
   background: var(--mauve-tint); border: 1.2pt solid var(--mauve); border-radius: 3pt;
 }
 table.thermo td.flag {
-  background: none; border: none; width: 1%; white-space: nowrap; padding-left: 4pt;
+  background: none; border: none; width: 1%; white-space: nowrap; padding-left: 7pt;
   font-size: 12pt; font-weight: 700; color: var(--mauve-dark);
 }
 table.thermo td.flag img { width: 14pt; height: 14pt; vertical-align: -2pt; margin-right: 3pt; }
