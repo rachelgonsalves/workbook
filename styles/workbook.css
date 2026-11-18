@@ -124,19 +124,21 @@ table.rules .rule { display: block; font-size: 18pt; font-weight: 700; color: va
 table.rules .why { display: block; font-size: 14pt; }
 
 /* ── Progress map: one card per module ─────────────────────── */
-table.map { width: 100%; border-collapse: separate; border-spacing: 12pt; margin: -6pt 0 0; }
+table.map { width: 100%; border-collapse: separate; border-spacing: 8pt; margin: -8pt 0 0; }
 table.map td.card {
   width: 50%; vertical-align: top;
-  border: 1.5pt solid var(--line); border-radius: 10pt; padding: 12pt 14pt 6pt;
+  border: 1.5pt solid var(--line); border-radius: 10pt; padding: 10pt 14pt 2pt;
 }
 .card-label {
   font-size: 10pt; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--mauve);
 }
 .card-title { font-size: 17pt; font-weight: 700; color: var(--mauve-dark); margin-bottom: 4pt; }
 ul.small-checks { margin: 0 0 4pt; font-size: 12.5pt; line-height: 1.3; }
-ul.small-checks li { padding: 4pt 0; align-items: flex-start; }
+ul.small-checks li { padding: 2pt 0; align-items: flex-start; }
+table.side-by-side { width: 100%; border-collapse: collapse; }
+table.side-by-side td { width: 50%; vertical-align: top; padding: 0; }
 ul.small-checks input[type=checkbox] { width: 13pt; height: 13pt; margin-top: 1pt; }
-.map-foot { text-align: center; font-size: 14pt; color: var(--mauve-dark); font-weight: 700; margin-top: 4pt; }
+.map-foot { text-align: center; font-size: 14pt; color: var(--mauve-dark); font-weight: 700; margin: 0; }
 
 /* ── Module overview: steps at a glance ────────────────────── */
 .overview { margin-top: 30pt; border: 1.5pt solid var(--line); border-radius: 10pt; padding: 18pt 22pt 6pt; }

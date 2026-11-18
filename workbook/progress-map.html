@@ -2,19 +2,28 @@
 {% from "workbook/_outline.html" import modules %}
 {#- Front matter: "Your progress map". One card per module, one checkbox per step.
     Field names: map_m1_1, map_m1_2, ... (separate from the boxes on the step pages). -#}
-{% macro map_card(m) -%}
+{# side_by_side=True lays the steps out in a row (used for the short Module 5 card) #}
+{% macro map_card(m, side_by_side=False) -%}
 <div class="card-label">Module {{ m.n }}</div>
 <div class="card-title">{{ m.short }}</div>
+{% if side_by_side %}
+<table class="side-by-side"><tr>
+  {% for title, minutes in m.steps %}
+  <td><ul class="checks small-checks">{{ ui.check("map_m" ~ m.n ~ "_" ~ loop.index, title) }}</ul></td>
+  {% endfor %}
+</tr></table>
+{% else %}
 <ul class="checks small-checks">
   {% for title, minutes in m.steps %}
   {{ ui.check("map_m" ~ m.n ~ "_" ~ loop.index, title) }}
   {% endfor %}
 </ul>
+{% endif %}
 {%- endmacro %}
 
 <section class="page">
   <h2 class="page-title">Your progress map</h2>
-  <p class="lead">Tick a box each time you finish a step, and watch this page fill up.</p>
+  <p class="lead">Tick a box for every step you finish.</p>
 
   <table class="map">
     {% for pair in modules[:4] | batch(2) %}
@@ -25,7 +34,7 @@
     </tr>
     {% endfor %}
     <tr>
-      <td class="card" colspan="2">{{ map_card(modules[4]) }}</td>
+      <td class="card" colspan="2">{{ map_card(modules[4], side_by_side=True) }}</td>
     </tr>
   </table>
 
