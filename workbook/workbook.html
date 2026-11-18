@@ -1,0 +1,23 @@
+<!doctype html>
+{#- MASTER FILE: lists every workbook page in order. To add a module, add one include line. -#}
+<html lang="en-CA">
+<head>
+  <meta charset="utf-8">
+  <title>{{ c.workbook.title }}: {{ c.advisor.name }}</title>
+  <meta name="author" content="{{ c.advisor.name }}">
+  <meta name="description" content="{{ c.workbook.subtitle }}">
+  <link rel="stylesheet" href="styles/workbook.css">
+  <style>
+    :root {
+      {%- for name, value in c.colours.items() %}
+      --{{ name | replace('_', '-') }}: {{ value }};
+      {%- endfor %}
+    }
+    @page { @bottom-left { content: {{ c.disclosure.short | css_string }}; } }
+  </style>
+</head>
+<body>
+  {% include "workbook/cover.html" %}
+  {% include "workbook/modules/01-snapshot.html" %}
+</body>
+</html>

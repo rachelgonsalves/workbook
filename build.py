@@ -13,6 +13,7 @@ from pathlib import Path
 
 import yaml
 from jinja2 import Environment, FileSystemLoader, StrictUndefined, select_autoescape
+from markupsafe import Markup
 
 ROOT = Path(__file__).resolve().parent
 OUT = ROOT / "build"
@@ -26,11 +27,20 @@ def load_config() -> dict:
 
 def make_env() -> Environment:
     # StrictUndefined: a typo like {{ c.advisor.nmae }} stops the build instead of printing blank.
-    return Environment(
+    env = Environment(
         loader=FileSystemLoader(str(ROOT)),
         autoescape=select_autoescape(["html"]),
         undefined=StrictUndefined,
     )
+    env.filters["css_string"] = css_string
+    return env
+
+
+def css_string(text: str) -> Markup:
+    """Make config text safe to use inside CSS, e.g. content: "...";"""
+    escaped = str(text).replace("\\", "\\\\").replace('"', '\\"').replace("\n", " ")
+    escaped = escaped.replace("<", "\\3C ").replace(">", "\\3E ")
+    return Markup(f'"{escaped}"')
 
 
 def write_tokens(cfg: dict) -> None:

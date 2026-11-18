@@ -43,7 +43,11 @@ The full checklist is in [PLAN.md](PLAN.md).
   WeasyPrint for the PDF. No JavaScript frameworks, no npm packages, no database, no CMS.
 - **One file per workbook module** (`workbook/modules/01-snapshot.html`, `02-debt.html`, ...). Fixing one module
   never touches the others.
-- **One shared stylesheet** (`styles/brand.css`) used by both the PDF and the landing page.
+- **Two small stylesheets, one set of colours:** `styles/brand.css` (website) and `styles/workbook.css`
+  (PDF print layout). Both use the colour variables generated from `config.yaml`.
+- **Reusable workbook pieces** (progress bar, micro-step, fill-in row, checklist, stop point) live in
+  `workbook/_components.html`. Modules use these instead of hand-writing HTML.
+- **Every fillable PDF field needs a unique `name`**, prefixed by module (`m1_`, `m2_`...).
 - **All personal details live in ONE file: `config.yaml`.** That's name, phone, email, booking link, career link,
   colours and disclosure text. Templates read from it. Changing a link means editing one line.
 - Every folder gets a two-line `README.md` explaining what's in it.
@@ -56,8 +60,8 @@ lead-magnet/
 ├── config.yaml        ← all personal details & links (edit here only)
 ├── build.py           ← builds the PDF + site
 ├── requirements.txt
-├── styles/brand.css
-├── workbook/          ← workbook templates (one per module)
+├── styles/            ← brand.css (site) + workbook.css (PDF)
+├── workbook/          ← workbook.html (master), cover.html, _components.html, modules/
 ├── site/              ← landing page, thank-you page, privacy page
 ├── assets/            ← fonts, icons, cover image
 └── .github/workflows/build.yml  ← auto-builds & publishes on every push

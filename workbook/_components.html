@@ -1,0 +1,49 @@
+{#- Reusable workbook pieces. Import with:
+      {% import "workbook/_components.html" as ui %}
+    Every fillable field needs a UNIQUE name (e.g. "m1_income_you"),
+    otherwise two boxes in the PDF would share the same answer. -#}
+
+{# Progress bar: "Module 2 of 5 · Title" with 5 segments #}
+{% macro progress(n, title, total=5) -%}
+<div class="progress">
+  <div class="label">Module {{ n }} of {{ total }} · {{ title }}</div>
+  <div class="bar">{% for i in range(1, total + 1) %}<div class="seg{% if i <= n %} on{% endif %}"></div>{% endfor %}</div>
+</div>
+{%- endmacro %}
+
+{# Micro-step header: [ ] Title ......... (clock) 5 min #}
+{% macro step(name, title, minutes=5) -%}
+<div class="step">
+  <input type="checkbox" name="{{ name }}_done" title="Tick when done">
+  <div class="title">{{ title }}</div>
+  <div class="time"><img src="assets/icons/clock.svg" alt="">{{ minutes }} min</div>
+</div>
+{%- endmacro %}
+
+{# One fill-in row. unit_before="$", unit_after="/ month" #}
+{% macro row(name, label, hint="", unit_before="", unit_after="", total=False) -%}
+<tr{% if total %} class="total"{% endif %}>
+  <td class="label">{{ label }}{% if hint %}<span class="hint">{{ hint }}</span>{% endif %}</td>
+  <td class="unit">{{ unit_before }}</td>
+  <td><input type="text" name="{{ name }}"></td>
+  <td class="unit">{{ unit_after }}</td>
+</tr>
+{%- endmacro %}
+
+{# Money row shortcut: label ...... $ [____] / month #}
+{% macro money(name, label, hint="", per="/ month", total=False) -%}
+{{ row(name, label, hint, "$", per, total) }}
+{%- endmacro %}
+
+{# Checklist item: [ ] text #}
+{% macro check(name, text) -%}
+<li><input type="checkbox" name="{{ name }}"><span>{{ text }}</span></li>
+{%- endmacro %}
+
+{# Gentle stop point so readers can quit without guilt #}
+{% macro stop(text="Close the workbook here if you like. Come back whenever you're ready.") -%}
+<div class="stop">
+  <img src="assets/icons/check.svg" alt="">
+  <div><strong>Done for today? That still counts.</strong><span>{{ text }}</span></div>
+</div>
+{%- endmacro %}

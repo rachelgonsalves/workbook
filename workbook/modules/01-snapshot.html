@@ -1,0 +1,28 @@
+{% import "workbook/_components.html" as ui %}
+{#- Module 1: The "No-Shame" Money Snapshot.
+    Field names start with m1_ so they never clash with other modules. -#}
+
+<section class="page">
+  {{ ui.progress(1, "Money Snapshot") }}
+  <h2 class="module-title">The No-Shame Money Snapshot</h2>
+  <p class="lead">This isn't a test, and nobody is grading it. Messy numbers count. Round numbers are perfect.</p>
+
+  {{ ui.step("m1_s1", "Money in") }}
+  <p>What lands in your bank account each month, <strong>after tax</strong>? Check one recent pay stub
+  or bank statement. A good guess is fine.</p>
+
+  <table class="fill">
+    {{ ui.money("m1_in_you", "Your take-home pay") }}
+    {{ ui.money("m1_in_partner", "Partner's take-home pay", hint="Skip if it's just you") }}
+    {{ ui.money("m1_in_benefits", "Government benefits", hint="e.g. Canada Child Benefit") }}
+    {{ ui.money("m1_in_other", "Anything else", hint="Side gig, support payments, rental") }}
+    {{ ui.money("m1_in_total", "Total money in", total=True) }}
+  </table>
+
+  <div class="callout">
+    <p><strong>Tip:</strong> if your pay changes month to month, use your <em>lowest</em> normal month.
+    It's a safer number to plan with.</p>
+  </div>
+
+  {{ ui.stop() }}
+</section>
