@@ -101,11 +101,13 @@
 - [x] 🤖 **About Rachel + full disclosure + disclaimer** (from `config.yaml`)
 
 ### 1H. Build & test
-- [ ] 🤖 `build.py` renders all modules in order into one HTML file → WeasyPrint → `ADHD-Money-Workbook.pdf`
-- [ ] 🤖 GitHub Action builds the PDF automatically on every push
+- [x] 🤖 `build.py` renders all modules in order into one HTML file → WeasyPrint → `ADHD-Money-Workbook.pdf`
+- [x] 🤖 GitHub Action builds the PDF automatically on every push
 - [ ] 🙋 Test: open in **Adobe Acrobat Reader** and **Chrome**, type in a few boxes, tick a few checkboxes,
       save, reopen, print one page in black and white
-- [ ] 🤖 Run the compliance list (CLAUDE.md section 6) page by page and fix anything flagged
+- [x] 🤖 Run the compliance list (CLAUDE.md section 6) page by page and fix anything flagged
+      (done 2026-11-18: 8 wording fixes. Questions to raise with Experior compliance are listed
+      under Phase 3.)
 - [ ] 🙋 Rachel reads it once and marks any wording changes
 
 ---
@@ -142,6 +144,12 @@
 ## Phase 3: Launch & forget
 
 - [ ] 🙋 Send the PDF and landing page link to **Experior compliance** for approval
+      Worth asking them about specifically:
+      · Career page (p. 28): is "independent work" and "flexible hours, often from home" OK, and do
+        they need any extra recruiting wording?
+      · Term vs. permanent, critical illness and disability descriptions (pp. 16–18)
+      · EFA description (p. 26): "about 30 to 60 minutes, by phone or video"
+      · Bio on the About page (p. 29)
       → Approved on: `____-__-__`
 - [ ] 🤖 Apply any compliance edits → push (the site rebuilds itself)
 - [ ] 🙋 **End-to-end test on your phone:** fill in the form → land on thank-you → download PDF →
