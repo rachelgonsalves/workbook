@@ -28,7 +28,7 @@
     </ul></td>
   </tr></table>
   <table class="person-row"><tr>
-    <td class="lbl">For about how many more years?</td>
+    <td class="lbl">Years, roughly</td>
     <td><input type="text" name="m3_p{{ i }}_years" title="Person {{ i }}: years"></td>
   </tr></table>
 </td>
@@ -38,14 +38,13 @@
 <section class="page">
   {{ ui.progress(m.n, m.short) }}
   <h2 class="module-title">{{ m.title }}</h2>
-  <p class="lead">Your income takes care of people. This module helps you see who, and what’s already
-  in place if something unexpected happens.</p>
+  <p class="lead">Your income takes care of people. Let’s see who, and what’s already in place.</p>
 
   {{ ui.overview(m.steps) }}
 
   <div class="callout">
-    <p><strong>No selling here.</strong> These pages explain the basics in plain English. They don’t
-    recommend any product. Your own situation is always best talked through with a licensed advisor.</p>
+    <p><strong>No selling here.</strong> These pages explain the basics in plain English and don’t
+    recommend any product.</p>
   </div>
 </section>
 
@@ -61,8 +60,6 @@
     <tr>{{ person(row * 2 + 1) }}<td class="gap"></td>{{ person(row * 2 + 2) }}</tr>
     {% endfor %}
   </table>
-
-  {{ ui.stop("Just knowing who’s on this page is a big step.") }}
 </section>
 
 {# ── Step 2: Term vs. permanent life insurance ───────────────── #}
@@ -123,8 +120,8 @@
 
   {{ ui.compare("Through work", "My own policy", [
       ("If I change jobs", "Often ends when I leave", "Usually stays with me"),
-      ("How much it pays", "Often part of my pay, set by the plan", "Set when I apply"),
-      ("Who decides the terms", "My employer’s plan", "Me, when I apply"),
+      ("How much it pays", "Often part of my pay, set by the plan", "Chosen when I apply (approval needed)"),
+      ("Who picks the coverage", "My employer", "Me, when I apply"),
   ]) }}
 
   {{ ui.choices("m3_di", [
