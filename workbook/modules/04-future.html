@@ -48,13 +48,13 @@
 <section class="page">
   <div class="page-label">Module 4 · Step 1 of {{ m.steps | length }}</div>
   {{ ui.step("m4_s1", m.steps[0][0]) }}
-  <p>An emergency fund is money set aside for surprises, like a car repair or a few weeks without pay.
-  Climb one rung at a time. Rung 1 counts, all on its own.</p>
+  <p>Money set aside for surprises, like a car repair or a few weeks without pay.
+  Climb one rung at a time. Rung 1 counts on its own.</p>
 
   <table class="ladder">
-    {{ rung(1, "Starter cushion", "A small amount that feels doable") }}
-    {{ rung(2, "One month of must-pays", "Housing, food, utilities, minimum debt payments") }}
-    {{ rung(3, "Three to six months", "The same must-pays, for longer") }}
+    {{ rung(1, "Starter cushion", "An amount that feels doable") }}
+    {{ rung(2, "One month of basics", "Housing, food, bills, debt minimums") }}
+    {{ rung(3, "Three to six months", "Of the same basics") }}
   </table>
 
   <div class="callout">
@@ -87,7 +87,7 @@
         "You have kids who may go to college, university or a trade school.") }}
     {{ account("fhsa", "FHSA", "First Home Savings Account",
         "Helps first-time buyers save for a home, with tax benefits.",
-        "You don’t own a home yet and hope to buy one. Rules apply.") }}
+        "You’re a first-time buyer hoping to buy a home. Rules apply.") }}
   </table>
 
   <div class="callout">
@@ -116,6 +116,8 @@
     <p><strong>Good times to check again:</strong> marriage, separation, a new baby, or a new job.
     The account or policy provider can tell you how to make a change.</p>
   </div>
+
+  {{ ui.stop() }}
 </section>
 
 {# ── Step 4: Will & power of attorney ────────────────────────── #}

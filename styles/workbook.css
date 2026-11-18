@@ -353,8 +353,8 @@ table.ladder td.n { width: 34pt; }
 table.ladder td.what { line-height: 1.25; }
 table.ladder td.what strong { display: block; font-size: 16pt; color: var(--mauve-dark); }
 table.ladder td.what span { font-size: 11.5pt; color: #5A5560; }
-table.ladder td.amt { width: 22%; }
-table.ladder td.done-col { width: 13%; padding-right: 0; text-align: center; }
+table.ladder td.amt { width: 19%; }
+table.ladder td.done-col { width: 10%; padding-right: 0; text-align: center; }
 table.ladder td.done-col input[type=checkbox] { width: 16pt; height: 16pt; margin: 0 auto; }
 .mini-label { font-size: 10pt; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--mauve-dark); margin-bottom: 2pt; }
 
