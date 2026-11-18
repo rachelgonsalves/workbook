@@ -1,0 +1,144 @@
+{% import "workbook/_components.html" as ui %}
+{% from "workbook/_outline.html" import modules %}
+{% set m = modules[3] %}
+{#- Module 4: The "Future You" Emergency & Legacy Setup.
+    Layout: one overview page, then one page per 5-minute step.
+    Step names come from workbook/_outline.html.
+    Field names start with m4_ so they never clash with other modules.
+    COMPLIANCE: registered accounts explained generically only. No contribution limits or
+    dollar figures that change yearly (point to canada.ca), no tax advice, no investment
+    products. Legal topics point to a lawyer. -#}
+
+{# One rung of the emergency fund ladder #}
+{% macro rung(n, title, hint) -%}
+<tr>
+  <td class="n"><div class="num">{{ n }}</div></td>
+  <td class="what"><strong>{{ title }}</strong><span>{{ hint }}</span></td>
+  <td class="amt"><div class="mini-label">Goal ($)</div><input type="text" name="m4_rung{{ n }}_goal" title="Rung {{ n }}: goal"></td>
+  <td class="amt"><div class="mini-label">Saved so far ($)</div><input type="text" name="m4_rung{{ n }}_saved" title="Rung {{ n }}: saved so far"></td>
+  <td class="done-col"><div class="mini-label">Done!</div><input type="checkbox" name="m4_rung{{ n }}_done" title="Rung {{ n }}: reached"></td>
+</tr>
+{%- endmacro %}
+
+{# One registered account row #}
+{% macro account(key, short, long, what, fit) -%}
+<tr>
+  <td class="acct"><strong>{{ short }}</strong><span>{{ long }}</span></td>
+  <td>{{ what }}</td>
+  <td class="fit">{{ fit }}</td>
+  <td class="curious"><input type="checkbox" name="m4_acct_{{ key }}" title="Learn more about the {{ short }}"></td>
+</tr>
+{%- endmacro %}
+
+{# ── Overview page ───────────────────────────────────────────── #}
+<section class="page">
+  {{ ui.progress(m.n, m.short) }}
+  <h2 class="module-title">{{ m.title }}</h2>
+  <p class="lead">Small things you set up today can make life easier for future you, and for the people you love.</p>
+
+  {{ ui.overview(m.steps) }}
+
+  <div class="callout">
+    <p><strong>Do it once.</strong> Most of this module is set up one time, then checked again
+    only when life changes.</p>
+  </div>
+</section>
+
+{# ── Step 1: Emergency fund ladder ───────────────────────────── #}
+<section class="page">
+  <div class="page-label">Module 4 · Step 1 of {{ m.steps | length }}</div>
+  {{ ui.step("m4_s1", m.steps[0][0]) }}
+  <p>An emergency fund is money set aside for surprises, like a car repair or a few weeks without pay.
+  Climb one rung at a time. Rung 1 counts, all on its own.</p>
+
+  <table class="ladder">
+    {{ rung(1, "Starter cushion", "A small amount that feels doable") }}
+    {{ rung(2, "One month of must-pays", "Housing, food, utilities, minimum debt payments") }}
+    {{ rung(3, "Three to six months", "The same must-pays, for longer") }}
+  </table>
+
+  <div class="callout">
+    <p><strong>Where to keep it:</strong> some people use a separate savings account: easy to reach in
+    an emergency, but not so easy to spend by accident.</p>
+    <p><strong>Set it and forget it:</strong> an automatic transfer on payday, even a small one,
+    can do the climbing for you.</p>
+  </div>
+
+  {{ ui.stop() }}
+</section>
+
+{# ── Step 2: TFSA, RRSP, RESP, FHSA ──────────────────────────── #}
+<section class="page">
+  <div class="page-label">Module 4 · Step 2 of {{ m.steps | length }}</div>
+  {{ ui.step("m4_s2", m.steps[1][0]) }}
+  <p>Canada has four common registered accounts. Each one has its own tax rules.
+  Here’s each one in plain English. Tick any you’d like to learn more about.</p>
+
+  <table class="accounts">
+    <tr><th>Account</th><th>In one line</th><th>This might fit if…</th><th class="curious">Learn more</th></tr>
+    {{ account("tfsa", "TFSA", "Tax-Free Savings Account",
+        "Money inside can grow, and withdrawals are generally not taxed.",
+        "You want flexible savings for goals or emergencies.") }}
+    {{ account("rrsp", "RRSP", "Registered Retirement Savings Plan",
+        "Contributions may lower your taxes now. Withdrawals are taxed later.",
+        "You’re saving for retirement.") }}
+    {{ account("resp", "RESP", "Registered Education Savings Plan",
+        "Saves for a child’s education after high school. The government may add grants.",
+        "You have kids who may go to college, university or a trade school.") }}
+    {{ account("fhsa", "FHSA", "First Home Savings Account",
+        "Helps first-time buyers save for a home, with tax benefits.",
+        "You don’t own a home yet and hope to buy one. Rules apply.") }}
+  </table>
+
+  <div class="callout">
+    <p><strong>Limits and rules change every year.</strong> Check the current ones at <strong>canada.ca</strong>
+    (search the account name), and talk to a tax professional about your own situation.</p>
+  </div>
+</section>
+
+{# ── Step 3: Beneficiary checkup ─────────────────────────────── #}
+<section class="page">
+  <div class="page-label">Module 4 · Step 3 of {{ m.steps | length }}</div>
+  {{ ui.step("m4_s3", m.steps[2][0]) }}
+  <p>A beneficiary is the person you name to receive money from an account or policy if you pass away.
+  Old names can stay on file for years. List what you have, then check each one.</p>
+  <p class="small">Places to look: life insurance (work or your own), RRSP, TFSA, a workplace pension
+  or savings plan.</p>
+
+  {{ ui.grid("m4_ben", [
+      ("what", "Account or policy", "wide"),
+      ("who", "Who’s named", ""),
+      ("checked", "Last checked", ""),
+      ("ok", "Up to date", "check"),
+  ], rows=6) }}
+
+  <div class="callout">
+    <p><strong>Good times to check again:</strong> marriage, separation, a new baby, or a new job.
+    The account or policy provider can tell you how to make a change.</p>
+  </div>
+</section>
+
+{# ── Step 4: Will & power of attorney ────────────────────────── #}
+<section class="page">
+  <div class="page-label">Module 4 · Step 4 of {{ m.steps | length }}</div>
+  {{ ui.step("m4_s4", m.steps[3][0]) }}
+  <p>A <strong>will</strong> says who gets what, and who you’d like to care for your kids.
+  A <strong>power of attorney</strong> names someone to make decisions for you if you can’t.
+  In Ontario there are two kinds: one for money and property, one for personal care.</p>
+
+  {{ ui.choices("m4_legal", [
+      ("will", "I have a will", ""),
+      ("willnew", "My will reflects my life today", ""),
+      ("poaprop", "I have a power of attorney for property", ""),
+      ("poacare", "I have a power of attorney for personal care", ""),
+      ("knows", "Someone I trust knows where these papers are", ""),
+  ]) }}
+
+  <div class="callout">
+    <p><strong>Next step if any are “no” or “not sure”:</strong> talk to a lawyer. Rules differ by
+    province. Ontario’s free power of attorney forms are at <strong>ontario.ca</strong>
+    (search “power of attorney”).</p>
+  </div>
+
+  {{ ui.module_done(m.n) }}
+</section>

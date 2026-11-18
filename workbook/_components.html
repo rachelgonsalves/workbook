@@ -60,13 +60,14 @@
 
 {# List table: one text box per cell, columns side by side.
    cols  = [("name", "What it’s for", "wide"), ("balance", "Balance owing ($)", ""), ...]
+           a class containing "check" makes that column tick boxes instead of text boxes
    total = label for a total box under the LAST column, or none.
    Field names: prefix_1_name, prefix_1_balance, ..., prefix_total #}
 {% macro grid(prefix, cols, rows=5, total="") -%}
 <table class="grid">
   <tr>{% for key, head, cls in cols %}<th class="{{ cls }}">{{ head }}</th>{% endfor %}</tr>
   {% for i in range(1, rows + 1) %}
-  <tr>{% for key, head, cls in cols %}<td><input type="text" name="{{ prefix }}_{{ i }}_{{ key }}" title="{{ head }}, line {{ i }}"></td>{% endfor %}</tr>
+  <tr>{% for key, head, cls in cols %}<td class="{{ cls }}">{% if "check" in cls %}<input type="checkbox" name="{{ prefix }}_{{ i }}_{{ key }}" title="{{ head }}, line {{ i }}">{% else %}<input type="text" name="{{ prefix }}_{{ i }}_{{ key }}" title="{{ head }}, line {{ i }}">{% endif %}</td>{% endfor %}</tr>
   {% endfor %}
   {% if total %}
   <tr class="total">
