@@ -27,7 +27,7 @@
   {{ ui.step("m2_s1", m.steps[0][0]) }}
   <p>Pick up to four debts. Each bar has 10 boxes. Tick one box every time you pay off
   another tenth of the starting balance.</p>
-  <p class="small"><strong>Illustrative example only:</strong> starting balance $3,000 → 1 box = $300
+  <p class="small"><strong>Illustrative example only:</strong> starting balance $3,000, so 1 box = $300
   (just drop the last zero).</p>
 
   {% for i in range(1, 5) %}{{ ui.thermometer("m2_th", i) }}{% endfor %}
