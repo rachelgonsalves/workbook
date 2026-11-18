@@ -16,11 +16,15 @@
 {% macro overview(steps) -%}
 <div class="overview">
   <div class="overview-head">In this module</div>
-  <ol>
+  <table class="steps">
     {% for title, minutes in steps %}
-    <li><span class="num">{{ loop.index }}</span><span class="t">{{ title }}</span><span class="time"><img src="assets/icons/clock.svg" alt="">{{ minutes }} min</span></li>
+    <tr>
+      <td class="n"><div class="num">{{ loop.index }}</div></td>
+      <td class="t">{{ title }}</td>
+      <td class="time"><img src="assets/icons/clock.svg" alt="">{{ minutes }} min</td>
+    </tr>
     {% endfor %}
-  </ol>
+  </table>
   <p class="overview-foot">About {{ steps | sum(attribute=1) }} minutes in total. Do one step today, or all of them. Any order works.</p>
 </div>
 {%- endmacro %}

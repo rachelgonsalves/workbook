@@ -109,16 +109,17 @@ p { margin: 0 0 12pt; }
   font-size: 11pt; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
   color: var(--mauve-dark); margin-bottom: 8pt;
 }
-.overview ol { list-style: none; padding: 0; margin: 0; }
-.overview li { display: flex; align-items: center; gap: 14pt; padding: 11pt 0; border-bottom: 1pt solid var(--line); }
-.overview li:last-child { border-bottom: none; }
+.overview table.steps { width: 100%; border-collapse: collapse; }
+.overview table.steps td { padding: 10pt 0; border-bottom: 1pt solid var(--line); vertical-align: middle; }
+.overview table.steps tr:last-child td { border-bottom: none; }
+.overview td.n { width: 40pt; }
 .overview .num {
-  flex: none; width: 26pt; height: 26pt; border-radius: 50%;
+  width: 26pt; height: 26pt; border-radius: 13pt; box-sizing: border-box;
   background: var(--mauve-tint); border: 1.2pt solid var(--mauve);
-  color: var(--mauve-dark); font-weight: 700; font-size: 13pt; text-align: center; line-height: 26pt;
+  color: var(--mauve-dark); font-weight: 700; font-size: 13pt; text-align: center; line-height: 24pt;
 }
-.overview .t { flex: 1; font-size: 17pt; }
-.overview .time { flex: none; font-size: 12pt; font-weight: 700; color: var(--mauve-dark); }
+.overview td.t { font-size: 17pt; }
+.overview td.time { width: 1%; white-space: nowrap; text-align: right; font-size: 12pt; font-weight: 700; color: var(--mauve-dark); }
 .overview .time img { width: 14pt; height: 14pt; vertical-align: -2pt; margin-right: 3pt; }
 .overview-foot { font-size: 13pt; color: #5A5560; padding-top: 6pt; }
 
