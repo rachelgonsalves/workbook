@@ -5,7 +5,7 @@
 /* ── Fonts (open licence, embedded in the PDF) ──────────────── */
 @font-face { font-family: "Atkinson"; src: url(../assets/fonts/AtkinsonHyperlegible-Regular.ttf); font-weight: 400; }
 @font-face { font-family: "Atkinson"; src: url(../assets/fonts/AtkinsonHyperlegible-Bold.ttf); font-weight: 700; }
-@font-face { font-family: "GreatVibes"; src: url(../assets/fonts/GreatVibes-Regular.ttf); }
+@font-face { font-family: "Lora"; src: url(../assets/fonts/Lora-SemiBold.ttf); font-weight: 600; }
 
 /* ── Page setup: US Letter, wide margins, quiet footer ──────── */
 @page {
@@ -39,6 +39,8 @@ body { margin: 0; }
 .page:last-child { break-after: auto; }
 
 h1, h2, h3 { color: var(--mauve-dark); line-height: 1.15; margin: 0; }
+/* Headings use Lora: a calm, easy-to-read serif. Body text stays Atkinson Hyperlegible. */
+h1, h2 { font-family: "Lora", serif; font-weight: 600; }
 h2 { font-size: 28pt; margin-bottom: 10pt; }
 h3 { font-size: 20pt; }
 p { margin: 0 0 12pt; }
@@ -74,8 +76,7 @@ p { margin: 0 0 12pt; }
 }
 .cover h1 {
   position: relative;
-  font-family: "GreatVibes"; font-weight: 400;
-  font-size: 66pt; line-height: 1.05; color: var(--mauve-dark);
+  font-size: 50pt; line-height: 1.1; color: var(--mauve-dark);
   margin-bottom: 26pt;
 }
 .cover .subtitle { position: relative; font-size: 20pt; max-width: 5.2in; margin-bottom: 36pt; }
@@ -86,7 +87,7 @@ p { margin: 0 0 12pt; }
   position: absolute; left: 1in; right: 1in; bottom: 0.9in;
   border-top: 1.5pt solid var(--line); padding-top: 14pt;
 }
-.cover .byline .name { font-family: "GreatVibes"; font-size: 30pt; color: var(--mauve-dark); line-height: 1.1; }
+.cover .byline .name { font-family: "Lora", serif; font-weight: 600; font-size: 22pt; color: var(--mauve-dark); line-height: 1.2; margin-bottom: 2pt; }
 .cover .byline .licence { font-size: 10pt; color: #5A5560; }
 
 /* ── Progress bar: "Module 1 of 5" ───────────────────────────── */
@@ -99,8 +100,8 @@ p { margin: 0 0 12pt; }
 .progress .seg { flex: 1; height: 9pt; border-radius: 5pt; background: var(--white); border: 1pt solid var(--line); }
 .progress .seg.on { background: var(--mauve); border-color: var(--mauve); }
 
-/* ── Module title (script) ──────────────────────────────────── */
-.module-title { font-family: "GreatVibes"; font-weight: 400; font-size: 44pt; line-height: 1.1; margin-bottom: 8pt; }
+/* ── Module title ────────────────────────────────────────────── */
+.module-title { font-size: 32pt; line-height: 1.15; margin-bottom: 12pt; }
 .lead { font-size: 18pt; margin-bottom: 24pt; }
 
 /* ── Number circle (overview, how-to rules). Keep it in a table cell:
@@ -111,8 +112,8 @@ p { margin: 0 0 12pt; }
   color: var(--mauve-dark); font-weight: 700; font-size: 13pt; text-align: center; line-height: 24pt;
 }
 
-/* ── Front-matter page title (plain font; script is for the cover and modules) ── */
-.page-title { font-size: 30pt; margin-bottom: 12pt; }
+/* ── Front-matter page title ─────────────────────────────────── */
+.page-title { font-size: 32pt; margin-bottom: 12pt; }
 .inline-icon { width: 14pt; height: 14pt; vertical-align: -2pt; margin: 0 2pt 0 1pt; }
 
 /* ── How to use: five numbered rules ───────────────────────── */

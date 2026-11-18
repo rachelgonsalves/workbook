@@ -169,7 +169,8 @@ It must stay readable when printed in black and white.
 | `--white`        | `#FFFFFF`  | page background                            |
 
 **Fonts** (free Google Fonts, embedded in the PDF):
-- Script (cover and module titles **only**): *Great Vibes* or similar, never for body text.
+- Headings (cover title, module and page titles): *Lora* SemiBold, a calm, readable serif. No script or
+  decorative fonts: Rachel asked for an easier-to-read header font (2026-11-18).
 - Body and UI: *Atkinson Hyperlegible* (designed for readability) or *Nunito Sans*.
 
 **Layout rules**
