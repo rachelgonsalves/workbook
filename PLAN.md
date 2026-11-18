@@ -49,10 +49,10 @@
 - [x] 🤖 Make inputs fillable: text boxes, number boxes and checkboxes become real PDF form fields
       (WeasyPrint `pdf_forms`)
 - [x] 🤖 Build a sample PDF to test the look (cover + Module 1 overview + Step 1 "Money in")
-- [ ] 🙋 Rachel approves the look before the full build
+- [x] 🙋 Rachel approves the look before the full build (approved 2026-11-18)
 
 ### 1B. Front matter
-- [ ] 🤖 **Cover:** title, subtitle, "by Rachel Gonsalves", a simple mauve shape (no photo needed)
+- [x] 🤖 **Cover:** title, subtitle, "by Rachel Gonsalves", a simple mauve shape (no photo needed)
 - [ ] 🤖 **"How to use this workbook":** any order, 5 minutes at a time, round numbers are fine, no judgement
 - [ ] 🤖 **Your progress map:** 5 modules × checkboxes on one page, to tick and see progress
 

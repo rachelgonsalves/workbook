@@ -103,6 +103,41 @@ p { margin: 0 0 12pt; }
 .module-title { font-family: "GreatVibes"; font-weight: 400; font-size: 44pt; line-height: 1.1; margin-bottom: 8pt; }
 .lead { font-size: 18pt; margin-bottom: 24pt; }
 
+/* ── Number circle (overview, how-to rules). Keep it in a table cell:
+      inside flex, WeasyPrint draws a stray inner border. ───────── */
+.num {
+  width: 26pt; height: 26pt; border-radius: 13pt; box-sizing: border-box;
+  background: var(--mauve-tint); border: 1.2pt solid var(--mauve);
+  color: var(--mauve-dark); font-weight: 700; font-size: 13pt; text-align: center; line-height: 24pt;
+}
+
+/* ── Front-matter page title (plain font; script is for the cover and modules) ── */
+.page-title { font-size: 30pt; margin-bottom: 12pt; }
+.inline-icon { width: 14pt; height: 14pt; vertical-align: -2pt; margin: 0 2pt 0 1pt; }
+
+/* ── How to use: five numbered rules ───────────────────────── */
+table.rules { width: 100%; border-collapse: collapse; margin: 0 0 18pt; }
+table.rules td { padding: 8pt 0; vertical-align: top; border-bottom: 1pt solid var(--line); }
+table.rules tr:last-child td { border-bottom: none; }
+table.rules td.n { width: 42pt; padding-top: 10pt; }
+table.rules .rule { display: block; font-size: 18pt; font-weight: 700; color: var(--mauve-dark); }
+table.rules .why { display: block; font-size: 14pt; }
+
+/* ── Progress map: one card per module ─────────────────────── */
+table.map { width: 100%; border-collapse: separate; border-spacing: 12pt; margin: -6pt 0 0; }
+table.map td.card {
+  width: 50%; vertical-align: top;
+  border: 1.5pt solid var(--line); border-radius: 10pt; padding: 12pt 14pt 6pt;
+}
+.card-label {
+  font-size: 10pt; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--mauve);
+}
+.card-title { font-size: 17pt; font-weight: 700; color: var(--mauve-dark); margin-bottom: 4pt; }
+ul.small-checks { margin: 0 0 4pt; font-size: 12.5pt; line-height: 1.3; }
+ul.small-checks li { padding: 4pt 0; align-items: flex-start; }
+ul.small-checks input[type=checkbox] { width: 13pt; height: 13pt; margin-top: 1pt; }
+.map-foot { text-align: center; font-size: 14pt; color: var(--mauve-dark); font-weight: 700; margin-top: 4pt; }
+
 /* ── Module overview: steps at a glance ────────────────────── */
 .overview { margin-top: 30pt; border: 1.5pt solid var(--line); border-radius: 10pt; padding: 18pt 22pt 6pt; }
 .overview-head {
@@ -113,11 +148,6 @@ p { margin: 0 0 12pt; }
 .overview table.steps td { padding: 10pt 0; border-bottom: 1pt solid var(--line); vertical-align: middle; }
 .overview table.steps tr:last-child td { border-bottom: none; }
 .overview td.n { width: 40pt; }
-.overview .num {
-  width: 26pt; height: 26pt; border-radius: 13pt; box-sizing: border-box;
-  background: var(--mauve-tint); border: 1.2pt solid var(--mauve);
-  color: var(--mauve-dark); font-weight: 700; font-size: 13pt; text-align: center; line-height: 24pt;
-}
 .overview td.t { font-size: 17pt; }
 .overview td.time { width: 1%; white-space: nowrap; text-align: right; font-size: 12pt; font-weight: 700; color: var(--mauve-dark); }
 .overview .time img { width: 14pt; height: 14pt; vertical-align: -2pt; margin-right: 3pt; }

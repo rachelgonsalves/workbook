@@ -1,20 +1,18 @@
 {% import "workbook/_components.html" as ui %}
+{% from "workbook/_outline.html" import modules %}
+{% set m = modules[0] %}
 {#- Module 1: The "No-Shame" Money Snapshot.
     Layout: one overview page, then one page per 5-minute step.
+    Step names come from workbook/_outline.html.
     Field names start with m1_ so they never clash with other modules. -#}
 
 {# ── Overview page ───────────────────────────────────────────── #}
 <section class="page">
-  {{ ui.progress(1, "Money Snapshot") }}
-  <h2 class="module-title">The No-Shame Money Snapshot</h2>
+  {{ ui.progress(m.n, m.short) }}
+  <h2 class="module-title">{{ m.title }}</h2>
   <p class="lead">This isn’t a test, and nobody is grading it. Messy numbers count. Round numbers are perfect.</p>
 
-  {{ ui.overview([
-      ("Money in", 5),
-      ("Money owed", 5),
-      ("What protection do I already have?", 5),
-      ("My 3 numbers that matter", 5),
-  ]) }}
+  {{ ui.overview(m.steps) }}
 
   <div class="callout">
     <p><strong>Why bother?</strong> You can’t make a plan for numbers you’ve never written down.

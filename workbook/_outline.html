@@ -1,0 +1,20 @@
+{#- The workbook's outline: every module and its 5-minute steps, in ONE place.
+    The progress map and each module's overview page both read from this list,
+    so renaming a step here updates it everywhere.
+    Use with: {% from "workbook/_outline.html" import modules %} -#}
+{% set modules = [
+  {"n": 1, "short": "Money Snapshot", "title": "The No-Shame Money Snapshot",
+   "steps": [("Money in", 5), ("Money owed", 5), ("What protection do I already have?", 5),
+             ("My 3 numbers that matter", 5)]},
+  {"n": 2, "short": "Debt & Mortgage", "title": "The Debt & Mortgage Accelerator",
+   "steps": [("Debt thermometers", 5), ("Snowball or avalanche?", 5), ("Freed-up cash tracker", 5),
+             ("Mortgage basics", 5)]},
+  {"n": 3, "short": "Family Protection", "title": "Family Protection & Income Replacement",
+   "steps": [("Who depends on my income?", 5), ("Term vs. permanent life insurance", 5),
+             ("Critical illness insurance", 5), ("Disability insurance", 5), ("“Do I have enough?” check", 5)]},
+  {"n": 4, "short": "Future You", "title": "The “Future You” Emergency & Legacy Setup",
+   "steps": [("Emergency fund ladder", 5), ("TFSA, RRSP, RESP, FHSA", 5), ("Beneficiary checkup", 5),
+             ("Will & power of attorney", 5)]},
+  {"n": 5, "short": "Your Next Step", "title": "Your Next Step",
+   "steps": [("What a free EFA looks like", 5), ("Book your free EFA", 5)]},
+] %}
