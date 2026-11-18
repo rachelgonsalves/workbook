@@ -73,13 +73,13 @@
       questions to ask at renewal. Clearly *illustrative*, no rate promises.
 
 ### 1E. Module 3: Family Protection & Income Replacement Checklist
-- [ ] 🤖 ⏱ **Who depends on my income?** Simple "people map" fill-in
-- [ ] 🤖 ⏱ **Term vs. Permanent life insurance:** plain-English side-by-side ("renting vs. owning"
+- [x] 🤖 ⏱ **Who depends on my income?** Simple "people map" fill-in
+- [x] 🤖 ⏱ **Term vs. Permanent life insurance:** plain-English side-by-side ("renting vs. owning"
       analogy), no product names, no projections
-- [ ] 🤖 ⏱ **Critical Illness insurance in one page:** what it is, what it can help with, questions to ask
-- [ ] 🤖 ⏱ **Disability insurance in one page:** "your paycheque is your biggest asset" framing, plus
+- [x] 🤖 ⏱ **Critical Illness insurance in one page:** what it is, what it can help with, questions to ask
+- [x] 🤖 ⏱ **Disability insurance in one page:** "your paycheque is your biggest asset" framing, plus
       group vs. personal coverage
-- [ ] 🤖 ⏱ **"Do I have enough?" check:** yes / no / not sure checkboxes, with no formula and every
+- [x] 🤖 ⏱ **"Do I have enough?" check:** yes / no / not sure checkboxes, with no formula and every
       "not sure" pointing to the EFA
 
 ### 1F. Module 4: The "Future You" Emergency & Legacy Setup
