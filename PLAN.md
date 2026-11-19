@@ -114,7 +114,7 @@
 
 ## Phase 2: Simple Static Landing Page
 
-- [ ] 🙋 Create a free Tally.so account (Claude gives exact click-by-click steps)
+- [x] 🙋 Create a free Tally.so account (Claude gives exact click-by-click steps) → done 2026-11-19, form https://tally.so/r/ArpX10
 - [ ] 🙋 Build the Tally form with these fields:
       first name · email · province (dropdown) · "What are you most interested in?"
       (Just the workbook / A free EFA / Learning about a career) · **unchecked** CASL opt-in checkbox ·
