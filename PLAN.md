@@ -154,6 +154,8 @@
       · Bio on the About page (p. 29)
       · Sign-up form: a **required phone number**, and follow-up calls to people who downloaded the
         workbook (Do Not Call List and CASL rules for calls and texts)
+      · Sign-up form interest options "How to save on Income Tax / Business Tax" and
+        "Savings and Investments": OK for a Life & Health advisor to offer?
       → Approved on: `____-__-__`
 - [ ] 🤖 Apply any compliance edits → push (the site rebuilds itself)
 - [ ] 🙋 **End-to-end test on your phone:** fill in the form → land on thank-you → download PDF →
