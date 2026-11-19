@@ -188,6 +188,12 @@
 - [ ] 🙋 Every 8 weeks: schedule the same approved bank again (about 30 minutes)
 
 ### Optional later (only if wanted, set up once)
-- [ ] Tally → Google Sheets integration (free) so leads also land in a spreadsheet automatically
+- [ ] 🙋 Tally → Google Sheets integration (free) so leads also land in a spreadsheet automatically
+      (Rachel asked 2026-11-19). Tally → form → Integrations → Google Sheets → Connect → new sheet
+      "Workbook Leads", **Export existing submissions ON**. Then add **Status** + **Notes** columns
+      to the right of Tally's columns, and a saved filter view **"Opted in"** on the
+      "Send me occasional tips…" column. Notes stay lined up because Tally only adds new rows.
+- [ ] 🤖 If the sheet is set up: add one line to `site/privacy.html` "Where it's stored" saying a copy
+      is kept in Rachel's private Google Sheet (Google may store it outside Canada). Waiting on Rachel's OK.
 - [ ] Free MailerLite welcome email (one email, sent automatically) for people who ticked the opt-in
 - [ ] Swap `booking_url` for a direct Calendly or Google booking page (one-line change in `config.yaml`)
