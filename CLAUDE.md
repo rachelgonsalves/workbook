@@ -143,7 +143,9 @@ When unsure, flag it for Experior compliance review instead of guessing.
 ### Lead form (CASL + PIPEDA)
 - **CASL:** an **unchecked** opt-in checkbox for future emails, e.g. *"Yes, send me occasional tips and updates
   from Rachel Gonsalves. I can unsubscribe anytime."* Downloading the workbook must work without ticking it.
-- Collect the minimum: first name, email, province, and optionally what they're interested in.
+- Collect the minimum: name, email, phone, province, and optionally what they're interested in.
+  The phone number is **required by Rachel's choice (2026-11-19)** for higher-intent leads. Don't
+  flag it again. The privacy notice must say why it's collected, and it's on the compliance question list.
 - **PIPEDA privacy notice** linked under the form: what's collected, why, where it's stored (Tally), how to
   ask for deletion, and a contact email.
 - Every follow-up email must include Rachel's name, contact info and an unsubscribe link.

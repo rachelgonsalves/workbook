@@ -116,7 +116,8 @@
 
 - [x] 🙋 Create a free Tally.so account (Claude gives exact click-by-click steps) → done 2026-11-19, form https://tally.so/r/ArpX10
 - [ ] 🙋 Build the Tally form with these fields:
-      first name · email · province (dropdown) · "What are you most interested in?"
+      name · email · **phone (required: Rachel's choice 2026-11-19, for higher-intent leads)** ·
+      province (dropdown) · "What are you most interested in?"
       (Just the workbook / A free EFA / Learning about a career) · **unchecked** CASL opt-in checkbox ·
       link to privacy notice
 - [ ] 🙋 Tally settings: **redirect on completion** → `https://workbook.rachelgonsalves.com/thank-you.html`,
@@ -125,7 +126,8 @@
       workbook cover image, embedded Tally form, short "About Rachel", disclosure footer
 - [ ] 🤖 `site/thank-you.html`: big **Download your workbook** button, **Book your free EFA** button,
       and a smaller "Curious about a career?" link
-- [ ] 🤖 `site/privacy.html`: PIPEDA privacy notice (what, why, where stored, how to delete, contact)
+- [ ] 🤖 `site/privacy.html`: PIPEDA privacy notice (what, why, where stored, how to delete, contact).
+      Must say why the **phone number** is collected and that Rachel may call about the person's request
 - [ ] 🤖 Social share image (Open Graph), favicon, page titles and descriptions
 - [ ] 🤖 Mobile check, link check, colour-contrast check
 
@@ -150,6 +152,8 @@
       · Term vs. permanent, critical illness and disability descriptions (pp. 16–18)
       · EFA description (p. 26): "about 30 to 60 minutes, by phone or video"
       · Bio on the About page (p. 29)
+      · Sign-up form: a **required phone number**, and follow-up calls to people who downloaded the
+        workbook (Do Not Call List and CASL rules for calls and texts)
       → Approved on: `____-__-__`
 - [ ] 🤖 Apply any compliance edits → push (the site rebuilds itself)
 - [ ] 🙋 **End-to-end test on your phone:** fill in the form → land on thank-you → download PDF →
