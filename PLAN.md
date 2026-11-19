@@ -132,7 +132,7 @@
 - [x] 🤖 `site/privacy.html`: PIPEDA privacy notice (what, why, where stored, how to delete, contact).
       Must say why the **phone number** is collected and that Rachel may call about the person's request
 - [x] 🤖 Social share image (Open Graph), favicon, page titles and descriptions → done 2026-11-19 (assets/og-image.png, favicon.svg)
-- [ ] 🤖 Mobile check, link check, colour-contrast check
+- [x] 🤖 Mobile check, link check, colour-contrast check → passed 2026-11-19 (no sideways scroll at phone width, buttons 63–93px tall, every link 200, lowest text contrast 6.0:1)
 
 ### Custom subdomain (one-time, about 10 minutes)
 - [ ] 🙋 At your domain registrar (where RachelGonsalves.com is managed), add **one DNS record**:
