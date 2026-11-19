@@ -1,25 +1,45 @@
-/* brand.css: shared styles for the website (and later the workbook PDF).
+/* brand.css: styles for the website pages (site/).
    Colours come from styles/tokens.css, which build.py generates from config.yaml.
-   Phase 1A adds the workbook pieces (progress bar, micro-steps, fill-in boxes). */
+   Mobile first: everything stacks on phones; wider screens get two columns in the hero. */
+
+@font-face { font-family: "Atkinson"; src: url(../assets/fonts/AtkinsonHyperlegible-Regular.ttf); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Atkinson"; src: url(../assets/fonts/AtkinsonHyperlegible-Bold.ttf); font-weight: 700; font-display: swap; }
+@font-face { font-family: "Lora"; src: url(../assets/fonts/Lora-SemiBold.ttf); font-weight: 600; font-display: swap; }
 
 *, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
   background: var(--white);
   color: var(--ink);
-  font-family: "Atkinson Hyperlegible", "Nunito Sans", "Segoe UI", Arial, sans-serif;
+  font-family: "Atkinson", "Segoe UI", Arial, sans-serif;
   font-size: 18px;
   line-height: 1.6;
 }
 
-.wrap { max-width: 720px; margin: 0 auto; padding: 48px 16px; }
+img { max-width: 100%; height: auto; }
 
-h1, h2, h3 { color: var(--mauve-dark); line-height: 1.2; }
-h1 { font-size: 2.2rem; margin: 0 0 0.5em; }
+.wrap { max-width: 760px; margin: 0 auto; padding: 0 16px; }
 
-a { color: var(--mauve-dark); }
+h1, h2, h3 { font-family: "Lora", Georgia, serif; font-weight: 600; color: var(--mauve-dark); line-height: 1.2; }
+h1 { font-size: 2.3rem; margin: 0 0 0.4em; }
+h2 { font-size: 1.7rem; margin: 0 0 0.6em; }
+h3 { font-size: 1.3rem; margin: 0 0 0.5em; }
+p { margin: 0 0 1em; }
 
+a { color: var(--mauve-dark); text-underline-offset: 3px; }
+a:focus-visible, .btn:focus-visible { outline: 3px solid var(--mauve); outline-offset: 3px; }
+
+.eyebrow {
+  font-size: 0.85rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--mauve-dark); margin-bottom: 0.6em;
+}
+.lead { font-size: 1.2rem; }
+.small { font-size: 0.95rem; color: #5F5864; }
+
+/* ── Buttons: at least 48px tall, AA contrast ───────────────── */
 .btn {
   display: inline-block;
   min-height: 48px;
@@ -28,17 +48,60 @@ a { color: var(--mauve-dark); }
   background: var(--mauve-dark);
   color: var(--white);
   font-weight: 700;
+  text-align: center;
   text-decoration: none;
 }
-.btn:hover { background: var(--mauve); }
+.btn:hover { background: var(--ink); }
+.btn-big { font-size: 1.2rem; padding: 16px 34px; }
 
-.callout {
+/* ── Sections ───────────────────────────────────────────────── */
+.section { padding: 40px 0; border-top: 1px solid var(--line); }
+.section:first-of-type { border-top: 0; }
+
+.card {
   background: var(--mauve-tint);
   border: 1px solid var(--line);
-  border-radius: 12px;
-  padding: 20px 24px;
+  border-radius: 16px;
+  padding: 24px 20px;
 }
 
+/* ── Hero ───────────────────────────────────────────────────── */
+.hero { padding: 40px 0; display: grid; gap: 32px; align-items: center; }
+.hero .cover {
+  width: 220px; justify-self: center;
+  border: 1px solid var(--line); border-radius: 6px;
+  box-shadow: 0 10px 30px rgba(46, 42, 48, 0.12);
+  transform: rotate(-2deg);
+}
+@media (min-width: 720px) {
+  .hero { grid-template-columns: 1fr 240px; padding: 64px 0 48px; }
+  .hero .cover { width: 240px; }
+  h1 { font-size: 2.8rem; }
+}
+
+/* ── Benefit list and module list ───────────────────────────── */
+.benefits { list-style: none; margin: 0; padding: 0; display: grid; gap: 18px; }
+.benefits li { display: grid; grid-template-columns: 32px 1fr; gap: 12px; align-items: start; }
+.benefits img { width: 28px; height: 28px; margin-top: 2px; }
+
+.modules { list-style: none; margin: 0; padding: 0; counter-reset: m; }
+.modules li {
+  display: grid; grid-template-columns: 40px 1fr; gap: 12px; align-items: center;
+  padding: 10px 0; border-bottom: 1px solid var(--line);
+}
+.modules li:last-child { border-bottom: 0; }
+.modules .num {
+  width: 36px; height: 36px; border-radius: 50%;
+  border: 2px solid var(--mauve); color: var(--mauve-dark);
+  font-weight: 700; display: grid; place-items: center;
+}
+.modules .steps { display: block; font-size: 0.95rem; color: #5F5864; }
+
+/* ── Sign-up form (Tally embed) ─────────────────────────────── */
+.form-card iframe { display: block; width: 100%; border: 0; min-height: 520px; }
+.form-card .small { margin: 12px 0 0; }
+
+/* ── Draft banner and footer ────────────────────────────────── */
 .draft-banner {
   background: var(--mauve-tint);
   border-bottom: 1px solid var(--line);
@@ -49,9 +112,18 @@ a { color: var(--mauve-dark); }
 }
 
 .site-footer {
+  margin-top: 40px;
+  padding-top: 24px; padding-bottom: 40px;
   border-top: 1px solid var(--line);
-  color: #6B6470;
+  color: #5F5864;
   font-size: 14px;
   line-height: 1.5;
 }
 .site-footer p { margin: 0 0 0.75em; }
+.site-footer .licence { font-weight: 700; color: var(--ink); }
+
+/* ── Long text pages (privacy notice) ───────────────────────── */
+.prose { padding: 40px 0 0; }
+.prose h2 { font-size: 1.35rem; margin-top: 1.6em; }
+.prose ul { padding-left: 1.2em; }
+.prose li { margin-bottom: 0.4em; }

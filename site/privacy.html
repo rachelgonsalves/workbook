@@ -1,0 +1,70 @@
+{% extends "site/_base.html" %}
+{#- PIPEDA privacy notice (CLAUDE.md §6): what is collected, why, where it's stored,
+    how long, how to opt out or ask for deletion, and who to contact.
+    If the Tally form gains or loses a question, update "What we collect" below.
+    Experior compliance reviews this page before launch. -#}
+{% set updated = "November 19, 2026" %}
+{% block title %}Privacy notice | {{ c.advisor.name }}{% endblock %}
+{% block description %}How {{ c.advisor.name }} collects, uses and protects your personal information.{% endblock %}
+{% block content %}
+<article class="prose">
+  <p class="eyebrow">Privacy notice</p>
+  <h1>Your information, in plain English</h1>
+  <p class="small">Last updated: {{ updated }}</p>
+
+  <p>This notice explains what personal information {{ c.advisor.name }} ({{ c.advisor.title }},
+  {{ c.advisor.agency }}) collects through this website, why, and the choices you have.
+  It follows Canada’s privacy law for businesses, PIPEDA.</p>
+
+  <h2>What we collect</h2>
+  <p>When you fill in the sign-up form, we collect:</p>
+  <ul>
+    <li>your name, email address and phone number</li>
+    <li>your province or territory</li>
+    <li>what you’re most interested in learning about, if you choose to tell us</li>
+    <li>whether you ticked the box to get occasional tips and updates by email</li>
+  </ul>
+  <p>This website doesn’t use advertising trackers, and we don’t run analytics on it.</p>
+
+  <h2>Why we collect it</h2>
+  <ul>
+    <li>To give you the free workbook.</li>
+    <li>To follow up about what you asked for. {{ c.advisor.name }} may contact you by phone or
+    email about it. You can say no or ask us to stop at any time.</li>
+    <li>Only if you ticked the box: to send you occasional tips and updates by email. Every email
+    has an unsubscribe link.</li>
+    <li>To know which province you’re in, because advisors can only offer insurance services
+    where they’re licensed.</li>
+  </ul>
+  <p>We don’t sell, rent or trade your personal information.</p>
+
+  <h2>Where it’s stored</h2>
+  <p>The form is run by <a href="https://tally.so/help/privacy-policy">Tally</a>, an online form
+  service based in Belgium. Tally stores form answers on servers in the European Union, and the
+  email alert we get for each new sign-up may pass through an email provider in the United States.
+  This means your information may be stored or processed outside Canada, where local laws apply.
+  A copy also reaches {{ c.advisor.name }}’s business email inbox.</p>
+
+  <h2>How long we keep it</h2>
+  <p>We keep your information only as long as we need it for the reasons above, or until you ask
+  us to delete it. If you become a client, your file is handled under {{ c.advisor.agency }}’s
+  record-keeping rules instead.</p>
+
+  <h2>Your choices</h2>
+  <ul>
+    <li><strong>Stop emails:</strong> click “unsubscribe” in any email, or just tell us.</li>
+    <li><strong>See, fix or delete your information:</strong> email or call us (details below).
+    We’ll reply within 30 days.</li>
+  </ul>
+
+  <h2>Contact</h2>
+  <p>{{ c.advisor.name }}<br>
+  <a href="mailto:{{ c.advisor.email }}">{{ c.advisor.email }}</a><br>
+  <a href="tel:+1{{ c.advisor.phone | replace('.', '') }}">{{ c.advisor.phone }}</a></p>
+
+  <p>If you’re not happy with how we’ve handled your information, you can contact the
+  <a href="https://www.priv.gc.ca/en/">Office of the Privacy Commissioner of Canada</a>.</p>
+
+  <p><a href="index.html">Back to the workbook page</a></p>
+</article>
+{% endblock %}

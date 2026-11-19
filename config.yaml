@@ -66,6 +66,11 @@ disclosure:
     insurance advice. Insurance products are subject to eligibility and underwriting.
     Any examples are illustrative only; your situation will be different. Speak with a
     licensed professional about your situation.
+  # Same as "full", worded for the website footer.
+  site: >-
+    This website and workbook are for educational purposes only and are not financial, tax,
+    legal or insurance advice. Insurance products are subject to eligibility and underwriting.
+    Speak with a licensed professional about your situation.
   career: >-
     A provincial life insurance licence (LLQP) is required to advise on or sell insurance.
     Results vary and depend on individual effort. No income is guaranteed.

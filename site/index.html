@@ -1,13 +1,80 @@
 {% extends "site/_base.html" %}
-{# Placeholder page. Phase 2 replaces it with the real landing page and form. #}
+{% from "workbook/_outline.html" import modules %}
+{#- Landing page: headline, benefits, what's inside, the Tally sign-up form, About Rachel.
+    The form ID comes from config.yaml → links.tally_form_id.
+    COMPLIANCE: educational, calm, no promises about outcomes, no pressure language. -#}
+{% block title %}Free money workbook for Canadian families | {{ c.advisor.name }}{% endblock %}
 {% block content %}
-  <h1>{{ c.workbook.title }}</h1>
-  <p>{{ c.workbook.subtitle }}.</p>
-  <div class="callout">
-    <p><strong>Coming soon.</strong> A free, ADHD-friendly workbook to help your family get clear on money,
-    one 5-minute step at a time.</p>
+
+<section class="hero">
+  <div>
+    <p class="eyebrow">Free workbook for Canadian families</p>
+    <h1>Money stuff, 5&nbsp;minutes at a time.</h1>
+    <p class="lead"><strong>{{ c.workbook.title }}</strong> is a free, fillable workbook that helps
+    you get clear on your family’s money, without shame, spreadsheets or jargon.</p>
+    <a class="btn btn-big" href="#get-it">Get the free workbook</a>
   </div>
-  <p style="margin-top:32px">
-    <a class="btn" href="{{ c.links.booking_url }}">Book a free, no-obligation financial analysis</a>
-  </p>
+  <img class="cover" src="assets/workbook-cover.png" width="765" height="990"
+       alt="Cover of the {{ c.workbook.title }} workbook">
+</section>
+
+<section class="section">
+  <h2>Made for busy, easily distracted brains</h2>
+  <ul class="benefits">
+    <li><img src="assets/icons/clock.svg" alt="">
+      <div><strong>Tiny steps.</strong> Every task takes about 5 minutes and has a box to tick
+      when it’s done. ADHD-friendly by design.</div></li>
+    <li><img src="assets/icons/check.svg" alt="">
+      <div><strong>No shame, no judgement.</strong> Round numbers are fine. Skip around, and stop
+      whenever you like.</div></li>
+    <li><img src="assets/icons/check.svg" alt="">
+      <div><strong>Use it your way.</strong> Type into it on your computer, or print it and grab
+      a pen.</div></li>
+  </ul>
+</section>
+
+<section class="section">
+  <h2>What’s inside</h2>
+  <ol class="modules">
+    {% for m in modules %}
+    <li><span class="num">{{ m.n }}</span>
+      <span><strong>{{ m.title }}</strong>
+      <span class="steps">{{ m.steps | length }} short steps · about {{ m.steps | sum(attribute=1) }} minutes</span></span></li>
+    {% endfor %}
+  </ol>
+</section>
+
+<section class="section" id="get-it">
+  <h2>Get your free workbook</h2>
+  <p>Fill in the form and your download starts on the next page.</p>
+  <div class="card form-card">
+    <iframe data-tally-src="https://tally.so/embed/{{ c.links.tally_form_id }}?alignLeft=1&amp;hideTitle=1&amp;transparentBackground=1&amp;dynamicHeight=1"
+            loading="lazy" width="100%" height="520" title="Get your free workbook"></iframe>
+    <noscript><p>The form needs JavaScript.
+      <a href="https://tally.so/r/{{ c.links.tally_form_id }}">Open the form on its own page</a>.</p></noscript>
+    <p class="small">We only use your details as described in our <a href="privacy.html">privacy notice</a>.
+    You don’t need to sign up for emails to get the workbook.
+    Form not showing? <a href="https://tally.so/r/{{ c.links.tally_form_id }}">Open it here</a>.</p>
+  </div>
+</section>
+
+<section class="section">
+  <h2>About Rachel</h2>
+  <p>{{ c.advisor.about }}</p>
+  <p class="small">{{ c.advisor.name }}, {{ c.advisor.title }} with {{ c.advisor.agency }},
+  serving {{ c.advisor.service_area }}.</p>
+</section>
+
+{#- Tally's standard embed loader: fills in the iframe and resizes it to fit the form. #}
+<script>
+  var d = document, w = "https://tally.so/widgets/embed.js",
+      v = function () {
+        if (typeof Tally !== "undefined") { Tally.loadEmbeds(); }
+        else { d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach(function (e) { e.src = e.dataset.tallySrc; }); }
+      };
+  if (typeof Tally !== "undefined") { v(); }
+  else if (d.querySelector('script[src="' + w + '"]') == null) {
+    var s = d.createElement("script"); s.src = w; s.onload = v; s.onerror = v; d.body.appendChild(s);
+  }
+</script>
 {% endblock %}

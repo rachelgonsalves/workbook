@@ -1,0 +1,43 @@
+{% extends "site/_base.html" %}
+{#- Thank-you page: Tally sends people here after they submit the form
+    (Tally → Settings → Redirect on completion). Always hidden from search engines.
+    COMPLIANCE: calm call to action, EFA described plainly, career note carries the LLQP disclosure. -#}
+{% block title %}Your workbook is ready | {{ c.advisor.name }}{% endblock %}
+{% block description %}Download your free {{ c.workbook.title }} workbook.{% endblock %}
+{% block robots %}<meta name="robots" content="noindex, nofollow">{% endblock %}
+{% block content %}
+
+<section class="hero" style="grid-template-columns: 1fr;">
+  <div>
+    <p class="eyebrow">Thank you</p>
+    <h1>Your workbook is ready</h1>
+    <p class="lead">Save it to your computer or phone, then open it and pick any 5-minute step.
+    There’s no wrong place to start.</p>
+    <a class="btn btn-big" href="{{ c.workbook.pdf_filename }}" download>Download your workbook (PDF)</a>
+    <p class="small" style="margin-top:16px">Tip: to type in the boxes, open the saved file in the free
+    Adobe Acrobat Reader or your web browser. You can also print it.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="card">
+    <h2>Want a hand with it?</h2>
+    <p>A free <strong>Experior Financial Analysis (EFA)</strong> is a no-cost, no-pressure chat
+    about your goals. It usually takes about 30 to 60 minutes, by phone or video. Bring your
+    workbook, even if only some pages are filled in.</p>
+    <a class="btn" href="{{ c.links.booking_url }}">Book your free, no-obligation EFA</a>
+    <p class="small" style="margin:16px 0 0">Prefer to call or email?
+      <a href="tel:+1{{ c.advisor.phone | replace('.', '') }}">{{ c.advisor.phone }}</a> ·
+      <a href="mailto:{{ c.advisor.email }}">{{ c.advisor.email }}</a></p>
+  </div>
+  <p class="small" style="margin-top:16px">{{ c.advisor.name }} may also reach out by phone or
+  email about what you asked for. You can say no anytime.</p>
+</section>
+
+<section class="section">
+  <h3>Curious about a career helping families?</h3>
+  <p>Some people who enjoy this kind of work go on to become licensed advisors, with flexible
+  hours and training available. <a href="{{ c.links.career_url }}">Learn about the career</a>.</p>
+  <p class="small">{{ c.disclosure.career }}</p>
+</section>
+{% endblock %}

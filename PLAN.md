@@ -124,11 +124,11 @@
       🙋 Tiny cleanup: delete the leftover text `Link "privacy notice" to https://…` at the bottom of the form
 - [ ] 🙋 Tally settings: **redirect on completion** → `https://workbook.rachelgonsalves.com/thank-you.html`,
       and turn on **email notification to Rachel** for each submission
-- [ ] 🤖 `site/index.html`: headline ("Money stuff, 5 minutes at a time"), 3 benefit bullets,
+- [x] 🤖 `site/index.html`: headline ("Money stuff, 5 minutes at a time"), 3 benefit bullets,
       workbook cover image, embedded Tally form, short "About Rachel", disclosure footer
-- [ ] 🤖 `site/thank-you.html`: big **Download your workbook** button, **Book your free EFA** button,
+- [x] 🤖 `site/thank-you.html`: big **Download your workbook** button, **Book your free EFA** button,
       and a smaller "Curious about a career?" link
-- [ ] 🤖 `site/privacy.html`: PIPEDA privacy notice (what, why, where stored, how to delete, contact).
+- [x] 🤖 `site/privacy.html`: PIPEDA privacy notice (what, why, where stored, how to delete, contact).
       Must say why the **phone number** is collected and that Rachel may call about the person's request
 - [ ] 🤖 Social share image (Open Graph), favicon, page titles and descriptions
 - [ ] 🤖 Mobile check, link check, colour-contrast check

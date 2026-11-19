@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{% block title %}{{ c.workbook.title }} | {{ c.advisor.name }}{% endblock %}</title>
-  <meta name="description" content="{{ c.workbook.subtitle }}">
-  {% if not c.launched %}<meta name="robots" content="noindex, nofollow">{% endif %}
+  <meta name="description" content="{% block description %}{{ c.workbook.subtitle }}.{% endblock %}">
+  {% block robots %}{% if not c.launched %}<meta name="robots" content="noindex, nofollow">{% endif %}{% endblock %}
   <link rel="stylesheet" href="styles/tokens.css">
   <link rel="stylesheet" href="styles/brand.css">
 </head>
@@ -16,10 +16,13 @@
     {% block content %}{% endblock %}
   </main>
 
+  {#- Required disclosures (CLAUDE.md §6): wording lives in config.yaml → disclosure. #}
   <footer class="wrap site-footer">
-    <p>{{ c.disclosure.licence_line }}</p>
-    <p>{{ c.disclosure.short }}</p>
-    <p>{{ c.advisor.phone }} · <a href="mailto:{{ c.advisor.email }}">{{ c.advisor.email }}</a></p>
+    <p class="licence">{{ c.disclosure.licence_line }}</p>
+    <p>{{ c.disclosure.site }}</p>
+    <p>{{ c.advisor.phone }} · <a href="mailto:{{ c.advisor.email }}">{{ c.advisor.email }}</a>
+      · <a href="{{ c.advisor.website }}">{{ c.advisor.website | pretty_url }}</a></p>
+    <p><a href="privacy.html">Privacy notice</a></p>
   </footer>
 </body>
 </html>
