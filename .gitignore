@@ -31,3 +31,6 @@ Thumbs.db
 desktop.ini
 .DS_Store
 .vscode/
+
+# Social post drafts (Word docs for compliance review), kept off the public repo
+/social/

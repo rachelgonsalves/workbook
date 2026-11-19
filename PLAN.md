@@ -174,6 +174,15 @@
       and business card QR code
 - [ ] 🎉 Done. The only ongoing task is replying to people who book.
 
+### Organic social promotion (no ads)
+- [x] 🤖 Draft a 24-post bank (8 weeks, Mon/Wed/Fri) + stories + bios → done 2026-11-19:
+      `social/Social-Post-Bank-for-Experior-Review.docx` (kept out of the public repo; to change a post,
+      edit `social/posts.py` and run `social/make_post_bank.py`)
+- [ ] 🙋 Send the post bank to **Experior compliance** → Approved on: `____-__-__`
+- [ ] 🙋 Make the slides in Canva (one template, swap the text) and schedule 8 weeks in
+      Meta Business Suite (Instagram + Facebook) and LinkedIn
+- [ ] 🙋 Every 8 weeks: schedule the same approved bank again (about 30 minutes)
+
 ### Optional later (only if wanted, set up once)
 - [ ] Tally → Google Sheets integration (free) so leads also land in a spreadsheet automatically
 - [ ] Free MailerLite welcome email (one email, sent automatically) for people who ticked the opt-in
