@@ -131,7 +131,7 @@
       and a smaller "Curious about a career?" link
 - [x] 🤖 `site/privacy.html`: PIPEDA privacy notice (what, why, where stored, how to delete, contact).
       Must say why the **phone number** is collected and that Rachel may call about the person's request
-- [ ] 🤖 Social share image (Open Graph), favicon, page titles and descriptions
+- [x] 🤖 Social share image (Open Graph), favicon, page titles and descriptions → done 2026-11-19 (assets/og-image.png, favicon.svg)
 - [ ] 🤖 Mobile check, link check, colour-contrast check
 
 ### Custom subdomain (one-time, about 10 minutes)

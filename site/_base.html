@@ -6,6 +6,21 @@
   <title>{% block title %}{{ c.workbook.title }} | {{ c.advisor.name }}{% endblock %}</title>
   <meta name="description" content="{% block description %}{{ c.workbook.subtitle }}.{% endblock %}">
   {% block robots %}{% if not c.launched %}<meta name="robots" content="noindex, nofollow">{% endif %}{% endblock %}
+  {#- Link previews on Facebook, LinkedIn, texts, etc. Image: assets/og-image.png (1200 x 630). #}
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_CA">
+  <meta property="og:site_name" content="{{ c.advisor.name }}">
+  <meta property="og:title" content="{{ self.title() }}">
+  <meta property="og:description" content="{{ self.description() }}">
+  <meta property="og:image" content="{{ c.site.github_pages_url }}assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Money stuff, 5 minutes at a time: a free workbook from {{ c.advisor.name }}">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <meta name="theme-color" content="{{ c.colours.mauve_dark }}">
   <link rel="stylesheet" href="styles/tokens.css">
   <link rel="stylesheet" href="styles/brand.css">
 </head>
