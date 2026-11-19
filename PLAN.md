@@ -121,7 +121,9 @@
       including a free EFA and the career) · **unchecked, optional** CASL opt-in checkbox ·
       link to privacy notice → done 2026-11-19. The landing page also links the privacy notice
       right under the form.
-      🙋 Tiny cleanup: delete the leftover text `Link "privacy notice" to https://…` at the bottom of the form
+      Leftover text cleaned up 2026-11-19.
+- [x] 🙋 Test sign-up on the draft site: form → thank-you page → PDF download → Tally email alert
+      → all worked, 2026-11-19
 - [x] 🙋 Tally settings: **redirect on completion** → `https://rachelgonsalves.github.io/workbook/thank-you.html`
       (this address keeps working after the custom domain is set up, because GitHub forwards it),
       and turn on **email notification to Rachel** for each submission → done 2026-11-19 (redirect checked on the live form)
@@ -135,11 +137,12 @@
 - [x] 🤖 Mobile check, link check, colour-contrast check → passed 2026-11-19 (no sideways scroll at phone width, buttons 63–93px tall, every link 200, lowest text contrast 6.0:1)
 
 ### Custom subdomain (one-time, about 10 minutes)
-- [ ] 🙋 At your domain registrar (where RachelGonsalves.com is managed), add **one DNS record**:
+- [ ] 🙋 In **Cloudflare** (rachelgonsalves.com's DNS is managed there), add **one DNS record**:
       ```
-      Type:  CNAME
-      Host:  workbook
-      Value: rachelgonsalves.github.io
+      Type:          CNAME
+      Name:          workbook
+      Target:        rachelgonsalves.github.io
+      Proxy status:  DNS only (grey cloud, NOT orange), so GitHub can issue the HTTPS certificate
       ```
 - [ ] 🙋 GitHub → Settings → Pages → Custom domain → `workbook.rachelgonsalves.com` → tick **Enforce HTTPS**
       (may take up to 24h to turn on)
