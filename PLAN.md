@@ -122,7 +122,8 @@
       link to privacy notice → done 2026-11-19. The landing page also links the privacy notice
       right under the form.
       🙋 Tiny cleanup: delete the leftover text `Link "privacy notice" to https://…` at the bottom of the form
-- [ ] 🙋 Tally settings: **redirect on completion** → `https://workbook.rachelgonsalves.com/thank-you.html`,
+- [ ] 🙋 Tally settings: **redirect on completion** → `https://rachelgonsalves.github.io/workbook/thank-you.html`
+      (this address keeps working after the custom domain is set up, because GitHub forwards it),
       and turn on **email notification to Rachel** for each submission
 - [x] 🤖 `site/index.html`: headline ("Money stuff, 5 minutes at a time"), 3 benefit bullets,
       workbook cover image, embedded Tally form, short "About Rachel", disclosure footer
