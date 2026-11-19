@@ -137,15 +137,16 @@
 - [x] 🤖 Mobile check, link check, colour-contrast check → passed 2026-11-19 (no sideways scroll at phone width, buttons 63–93px tall, every link 200, lowest text contrast 6.0:1)
 
 ### Custom subdomain (one-time, about 10 minutes)
-- [ ] 🙋 In **Cloudflare** (rachelgonsalves.com's DNS is managed there), add **one DNS record**:
+- [x] 🙋 In **Cloudflare** (rachelgonsalves.com's DNS is managed there), add **one DNS record** → done 2026-11-19:
       ```
       Type:          CNAME
       Name:          workbook
       Target:        rachelgonsalves.github.io
       Proxy status:  DNS only (grey cloud, NOT orange), so GitHub can issue the HTTPS certificate
       ```
-- [ ] 🙋 GitHub → Settings → Pages → Custom domain → `workbook.rachelgonsalves.com` → tick **Enforce HTTPS**
-      (may take up to 24h to turn on)
+- [x] 🙋 GitHub → Settings → Pages → Custom domain → `workbook.rachelgonsalves.com` → tick **Enforce HTTPS**
+      (may take up to 24h to turn on) → done by Claude 2026-11-19: live at https://workbook.rachelgonsalves.com/,
+      certificate approved, HTTPS enforced, old github.io links forward automatically
 
 ---
 
