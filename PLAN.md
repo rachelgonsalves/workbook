@@ -115,11 +115,13 @@
 ## Phase 2: Simple Static Landing Page
 
 - [x] 🙋 Create a free Tally.so account (Claude gives exact click-by-click steps) → done 2026-11-19, form https://tally.so/r/ArpX10
-- [ ] 🙋 Build the Tally form with these fields:
+- [x] 🙋 Build the Tally form with these fields:
       name · email · **phone (required: Rachel's choice 2026-11-19, for higher-intent leads)** ·
-      province (dropdown) · "What are you most interested in?"
-      (Just the workbook / A free EFA / Learning about a career) · **unchecked** CASL opt-in checkbox ·
-      link to privacy notice
+      province (dropdown) · "What are you most interested in?" (Rachel's own list of 9 options,
+      including a free EFA and the career) · **unchecked, optional** CASL opt-in checkbox ·
+      link to privacy notice → done 2026-11-19. The landing page also links the privacy notice
+      right under the form.
+      🙋 Tiny cleanup: delete the leftover text `Link "privacy notice" to https://…` at the bottom of the form
 - [ ] 🙋 Tally settings: **redirect on completion** → `https://workbook.rachelgonsalves.com/thank-you.html`,
       and turn on **email notification to Rachel** for each submission
 - [ ] 🤖 `site/index.html`: headline ("Money stuff, 5 minutes at a time"), 3 benefit bullets,
@@ -156,6 +158,7 @@
         workbook (Do Not Call List and CASL rules for calls and texts)
       · Sign-up form interest options "How to save on Income Tax / Business Tax" and
         "Savings and Investments": OK for a Life & Health advisor to offer?
+      · Sign-up form option "Career Opportunity - Start your Own Practice": OK as recruiting wording?
       → Approved on: `____-__-__`
 - [ ] 🤖 Apply any compliance edits → push (the site rebuilds itself)
 - [ ] 🙋 **End-to-end test on your phone:** fill in the form → land on thank-you → download PDF →
