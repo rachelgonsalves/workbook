@@ -8,7 +8,7 @@
 # false = draft mode: search engines are told to ignore the site and
 #         a small "Draft" banner shows on the site.
 # true  = live. Flip this ONLY after Experior compliance approves.
-launched: false
+launched: true   # flipped 2026-11-19 after Experior compliance approval
 
 # ── About you ────────────────────────────────────────────────
 advisor:
@@ -38,7 +38,7 @@ links:
 
 # ── Website ──────────────────────────────────────────────────
 site:
-  # Address the site will live at once DNS is set up (Phase 2).
+  # The live address (DNS set up 2026-11-19). Share-preview images use it.
   custom_domain: "workbook.rachelgonsalves.com"
   github_pages_url: "https://rachelgonsalves.github.io/workbook/"
 

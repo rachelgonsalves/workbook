@@ -4,7 +4,7 @@
 > Boxes marked 🤖 are Claude's job. Boxes marked 🙋 need Rachel (a click, a login or a decision).
 > Rules live in [CLAUDE.md](CLAUDE.md).
 
-**Progress:** Phase 0 ✅ · Phase 1 ☐ · Phase 2 ☐ · Phase 3 ☐
+**Progress:** Phase 0 ✅ · Phase 1 ✅ (approved) · Phase 2 ✅ · Phase 3: launched 2026-11-19, final phone test + sharing left
 
 ---
 
@@ -152,7 +152,7 @@
 
 ## Phase 3: Launch & forget
 
-- [ ] 🙋 Send the PDF and landing page link to **Experior compliance** for approval
+- [x] 🙋 Send the PDF and landing page link to **Experior compliance** for approval
       Worth asking them about specifically:
       · Career page (p. 28): is "independent work" and "flexible hours, often from home" OK, and do
         they need any extra recruiting wording?
@@ -164,8 +164,10 @@
       · Sign-up form interest options "How to save on Income Tax / Business Tax" and
         "Savings and Investments": OK for a Life & Health advisor to offer?
       · Sign-up form option "Career Opportunity - Start your Own Practice": OK as recruiting wording?
-      → Approved on: `____-__-__`
-- [ ] 🤖 Apply any compliance edits → push (the site rebuilds itself)
+      → Approved on: `2026-11-19` (Rachel: "everything is approved and good to go")
+- [x] 🤖 Apply any compliance edits → push (the site rebuilds itself) → no edits were needed.
+      Site switched to `launched: true` on 2026-11-19 (draft banner off, Google allowed;
+      the thank-you page stays hidden from search on purpose)
 - [ ] 🙋 **End-to-end test on your phone:** fill in the form → land on thank-you → download PDF →
       check the notification email arrived
 - [ ] 🙋 Add the link to RachelGonsalves.com, Instagram/Facebook/LinkedIn bios, email signature,
