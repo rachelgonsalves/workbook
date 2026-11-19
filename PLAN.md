@@ -178,7 +178,10 @@
 - [x] 🤖 Draft a 24-post bank (8 weeks, Mon/Wed/Fri) + stories + bios → done 2026-11-19:
       `social/Social-Post-Bank-for-Experior-Review.docx` (kept out of the public repo; to change a post,
       edit `social/posts.py` and run `social/make_post_bank.py`)
-- [ ] 🙋 Send the post bank to **Experior compliance** → sent 2026-11-19 → Approved on: `____-__-__`
+- [x] 🙋 Send the post bank to **Experior compliance** → sent 2026-11-19 → Approved on: `2026-11-19`
+      (Rachel: "experior approved everything"). Captions must stay word for word; any wording
+      change goes back to Experior.
+- [x] 🤖 Captions file with link + hashtags for every post → `social/captions.txt` (2026-11-19)
 - [x] 🤖 Make the slides in Canva → done 2026-11-19: 23 designs, links in `social/canva-links.md`
       (made without the brand kit, which adds "Financial Planner & Investor", a protected title in Ontario)
 - [ ] 🙋 After approval: schedule 8 weeks in Meta Business Suite (Instagram + Facebook) and LinkedIn
